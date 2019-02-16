@@ -1,18 +1,14 @@
-package com.yovoads.Android;
+package com.yovoads.androidSDK;
 
 
 import android.app.Activity;
-import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.yovoads.yovoplugin.DI;
+import com.YovoAds.androidSDK.R;
 import com.yovoads.yovoplugin.YovoSDK;
 import com.yovoads.yovoplugin.core.YTimer;
-import com.yovoads.yovoplugin.implementations.reward.YRewardLoader;
-import com.yovoads.yovoplugin.implementations.reward.YRewardView;
 
 
 public class MainActivity extends Activity

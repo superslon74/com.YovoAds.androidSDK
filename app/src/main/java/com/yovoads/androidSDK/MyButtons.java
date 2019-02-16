@@ -1,13 +1,10 @@
-package com.yovoads.Android;
+package com.yovoads.androidSDK;
 
-import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 
-import com.yovoads.yovoplugin.DI;
-import com.yovoads.yovoplugin.YovoSDK;
+import com.YovoAds.androidSDK.R;
 import com.yovoads.yovoplugin.common.EGravity;
-import com.yovoads.yovoplugin.implementations.interstitial.YInterstitialView;
 
 public class MyButtons {
     private static MyButtons mc_this;

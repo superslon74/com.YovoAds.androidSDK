@@ -1,4 +1,4 @@
-package com.yovoads.Android;
+package com.yovoads.androidSDK;
 
 import org.junit.Test;
 

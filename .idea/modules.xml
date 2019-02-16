@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AudienceNetwork/AudienceNetwork.iml" filepath="$PROJECT_DIR$/AudienceNetwork/AudienceNetwork.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/com.yovoads.Android.iml" filepath="$PROJECT_DIR$/com.yovoads.Android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/com.YovoAds.androidSDK.iml" filepath="$PROJECT_DIR$/com.YovoAds.androidSDK.iml" />
       <module fileurl="file://$PROJECT_DIR$/unity-ads 3.0.0/unity-ads 3.0.0.iml" filepath="$PROJECT_DIR$/unity-ads 3.0.0/unity-ads 3.0.0.iml" />
       <module fileurl="file://$PROJECT_DIR$/yovoplugin/yovoplugin.iml" filepath="$PROJECT_DIR$/yovoplugin/yovoplugin.iml" />
     </modules>
