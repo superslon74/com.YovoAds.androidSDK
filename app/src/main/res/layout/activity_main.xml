@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="133dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/but_banner_show"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/but_banner_setBG"
+                android:layout_below="@+id/but_banner_hide"
+                android:layout_marginTop="40dp"
+                android:minHeight="60dp"
+                android:minWidth="150dp"
+                android:text="Show" />
+
+            <Button
+                android:id="@+id/but_banner_hide"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/but_banner_setBG"
+                android:layout_below="@+id/but_banner_setBG"
+                android:minHeight="60dp"
+                android:minWidth="150dp"
+                android:text="Hide" />
+
+            <Button
+                android:id="@+id/but_banner_setBG"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:minHeight="60dp"
+                android:minWidth="150dp"
+                android:text="SetBG" />
+
+            <Button
+                android:id="@+id/but_banner_setColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:minHeight="60dp"
+                android:minWidth="150dp"
+                android:text="SetColor" />
+
+            <Button
+                android:id="@+id/but_banner_setGravity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:minHeight="60dp"
+                android:minWidth="150dp"
+                android:text="SetGravity" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="122dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/but_inter_show"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="40dp"
+                android:minHeight="60dp"
+                android:minWidth="150dp"
+                android:text="InterShow" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/but_reward_show"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="40dp"
+                android:minHeight="60dp"
+                android:minWidth="150dp"
+                android:text="RewardShow" />
+
+            <Button
+                android:id="@+id/but_reward_showIgnor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:minHeight="60dp"
+                android:minWidth="150dp"
+                android:text="RewardShowIgnor" />
+
+            <Button
+                android:id="@+id/but_appQuit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="140dp"
+                android:minHeight="60dp"
+                android:minWidth="150dp"
+                android:text="App Quit" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--fragment
+        android:id="@+id/FragmentYovo"
+        android:name="com.yovoads.yovoplugin.yovoextra.YBannerContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" /-->
+
+
+</RelativeLayout>

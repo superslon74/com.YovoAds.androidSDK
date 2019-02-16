@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">yovoplugin</string>
+
+    <string name="bannerScreen"></string>
+    <string name="bannerIcon"></string>
+    <string name="bannerInstall"></string>
+    <string name="bannerStar1"></string>
+    <string name="bannerStar2"></string>
+    <string name="bannerStar3"></string>
+    <string name="bannerStar4"></string>
+    <string name="bannerStar5"></string>
+    <string name="bannerTitle"></string>
+    <string name="bannerImageOnly"></string>
+    <string name="bannerAds">Ads</string>
+
+    <string name="title_activity_full">FullActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <string name="title_activity_yreward_view">YRewardView</string>
+
+
+</resources>
