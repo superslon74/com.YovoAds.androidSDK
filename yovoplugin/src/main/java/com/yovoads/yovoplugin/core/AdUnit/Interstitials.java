@@ -21,11 +21,10 @@ public class Interstitials implements IAdUnitType {
     private int m_timeShowingLast = -1;
 ////////////////////////////////////////////////////////////// ---  Constructor  --- //////////////////////////////////////////////////////////////
 
-    public static Interstitials Init() {
+    public static void Init() {
         if (mc_this == null) {
             mc_this = new Interstitials();
         }
-        return mc_this;
     }
 
     private Interstitials() {

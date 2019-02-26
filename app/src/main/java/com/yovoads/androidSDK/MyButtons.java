@@ -3,7 +3,7 @@ package com.yovoads.androidSDK;
 import android.view.View;
 import android.widget.Button;
 
-import com.YovoAds.androidSDK.R;
+
 import com.yovoads.yovoplugin.common.EGravity;
 
 public class MyButtons {

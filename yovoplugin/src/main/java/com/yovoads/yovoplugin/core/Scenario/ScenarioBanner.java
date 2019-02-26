@@ -22,17 +22,14 @@ public class ScenarioBanner extends AScenario {
     public Thread                           m_threadBannerStartAwake = null;
     ////////////////////////////////////////////////////////////// ---  Constructor  --- //////////////////////////////////////////////////////////////
 
-    public static ScenarioBanner Init() {
+    public static void Init() {
         if (mc_this == null) {
             mc_this = new ScenarioBanner();
             Banners.Init();
         }
-
-        return mc_this;
     }
 
     private ScenarioBanner() {
-        //BannerStarting.getInstance();
     }
 
     public static ScenarioBanner getInstance() {

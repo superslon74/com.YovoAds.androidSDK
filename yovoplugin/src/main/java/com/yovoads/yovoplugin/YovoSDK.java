@@ -56,12 +56,14 @@ public class YovoSDK {
     }
 
 
-    public void SetNetworksParams(boolean _isAdmob, boolean _isFacebook, boolean _isUnityAds, boolean _isCrossPromotion, boolean _isExchange, boolean _isYovoAdvertising) {
-        AdNetworkData.getInstance().SetParams(_isAdmob, _isFacebook, _isUnityAds, _isCrossPromotion, _isExchange, _isYovoAdvertising);
-
+    public void ScenarioInit(){
         ScenarioBanner.Init();
         ScenarioInterstitial.Init();
         ScenarioReward.Init();
+    }
+
+    public void SetNetworksParams(boolean _isAdmob, boolean _isFacebook, boolean _isUnityAds, boolean _isCrossPromotion, boolean _isExchange, boolean _isYovoAdvertising) {
+        AdNetworkData.getInstance().SetParams(_isAdmob, _isFacebook, _isUnityAds, _isCrossPromotion, _isExchange, _isYovoAdvertising);
     }
 
     public void AddNetworkAdmobData(String _admobAppId, String _admobBannerLow, String _admobBannerMedium, String _admobBannerHigh,

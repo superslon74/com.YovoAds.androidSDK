@@ -97,8 +97,7 @@ public class DI
 
     public void OnSetGaid(String _gaid, String _error)
     {
-        if(_error.isEmpty())
-        {
+        if(_error.isEmpty()) {
             _GAID = _gaid;
         }
         //_GAID = "___empty___";

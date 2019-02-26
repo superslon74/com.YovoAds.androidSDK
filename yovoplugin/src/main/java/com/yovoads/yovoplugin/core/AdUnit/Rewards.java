@@ -28,13 +28,10 @@ public class Rewards implements IAdUnitType {
     private String m_value = "";
 ////////////////////////////////////////////////////////////// ---  Constructor  --- //////////////////////////////////////////////////////////////
 
-    public static Rewards Init() {
-        if(mc_this == null)
-        {
+    public static void Init() {
+        if(mc_this == null) {
             mc_this = new Rewards();
         }
-
-        return mc_this;
     }
 
     private Rewards() {

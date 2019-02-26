@@ -26,12 +26,10 @@ public class Banners implements IAdUnitType {
     public BannerView mc_bannerViewActive = null;
     ////////////////////////////////////////////////////////////// ---  Constructor  --- //////////////////////////////////////////////////////////////
 
-    public static Banners Init() {
+    public static void Init() {
         if (mc_this == null) {
             mc_this = new Banners();
         }
-
-        return mc_this;
     }
 
     private Banners() {

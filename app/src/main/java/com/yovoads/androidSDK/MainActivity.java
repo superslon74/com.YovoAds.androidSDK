@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.YovoAds.androidSDK.R;
+
 import com.yovoads.yovoplugin.YovoSDK;
 import com.yovoads.yovoplugin.core.YTimer;
 
@@ -31,9 +31,11 @@ public class MainActivity extends Activity
         mc_this = this;
         m_activity = this;
 
-        Init.initYovoSDK(MainActivity.this);
-        m_yovoSDK.Start();
         MyButtons.getInstance();
+
+        Init.initYovoSDK(MainActivity.this);
+
+
 
 
 

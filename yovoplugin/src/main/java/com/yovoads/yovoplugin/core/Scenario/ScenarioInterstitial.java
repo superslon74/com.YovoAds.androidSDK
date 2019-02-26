@@ -18,12 +18,11 @@ public class ScenarioInterstitial extends AScenario {
     private static ScenarioInterstitial mc_this = null;
     ////////////////////////////////////////////////////////////// ---  Constructor  --- //////////////////////////////////////////////////////////////
 
-    public static ScenarioInterstitial Init() {
+    public static void Init() {
         if (mc_this == null) {
             mc_this = new ScenarioInterstitial();
             Interstitials.Init();
         }
-        return mc_this;
     }
 
     private ScenarioInterstitial() {

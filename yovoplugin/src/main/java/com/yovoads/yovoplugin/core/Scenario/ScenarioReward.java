@@ -18,12 +18,11 @@ public class ScenarioReward extends AScenario {
     private static ScenarioReward mc_this = null;
 ////////////////////////////////////////////////////////////// ---  Constructor  --- //////////////////////////////////////////////////////////////
 
-    public static ScenarioReward Init() {
+    public static void Init() {
         if (mc_this == null) {
             mc_this = new ScenarioReward();
             Rewards.Init();
         }
-        return mc_this;
     }
 
     public ScenarioReward() {

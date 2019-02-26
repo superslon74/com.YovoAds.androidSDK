@@ -1,5 +1,7 @@
 package com.yovoads.yovoplugin.core.www;
 
+import android.util.Log;
+
 import com.yovoads.yovoplugin.YovoSDK;
 import com.yovoads.yovoplugin.common.EWwwCommand;
 import com.yovoads.yovoplugin.common.IYHttpConnectResult;
@@ -91,6 +93,15 @@ public class WWWParse implements IYHttpConnectResult {
         {
             if(_scenario.me_adUnitType == EAdUnitType._BANNER)
             {
+                if(ScenarioBanner.getInstance() == null){
+                    Log.e("QQQQ", "111");
+                }
+                if(_scenario.ml_quratorScenarioQueueRule == null){
+                    Log.e("QQQQ", "222");
+                }
+                if(_quratorActive.md_quratorAdNetworksAvailable.get(EAdUnitType._BANNER) == null){
+                    Log.e("QQQQ", "333");
+                }
                 ScenarioBanner.getInstance().SetScenario(_scenario.ml_quratorScenarioQueueRule, _quratorActive.md_quratorAdNetworksAvailable.get(EAdUnitType._BANNER));
             }
             else if(_scenario.me_adUnitType == EAdUnitType._INTERSTITIAL)
