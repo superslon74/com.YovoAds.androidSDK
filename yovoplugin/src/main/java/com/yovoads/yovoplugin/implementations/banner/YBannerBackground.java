@@ -71,8 +71,7 @@ public class YBannerBackground extends Fragment {
         }
     }
 
-    public void BannerSetBackground(final boolean _isBackgroundShow)
-    {
+    public void BannerSetBackground(final boolean _isBackgroundShow) {
         m_isBackgroundShow = _isBackgroundShow;
         DI.m_activity.runOnUiThread(new Runnable()
         {

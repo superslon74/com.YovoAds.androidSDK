@@ -1,18 +1,14 @@
 package com.yovoads.yovoplugin.implementations.reward;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -26,7 +22,6 @@ import com.yovoads.yovoplugin.common.EPivol;
 import com.yovoads.yovoplugin.common.EScreenOrientation;
 import com.yovoads.yovoplugin.core.YImage;
 import com.yovoads.yovoplugin.implementations.Y__View;
-import com.yovoads.yovoplugin.implementations.interstitial.YInterstitialView;
 
 
 public class YRewardView extends Y__View {

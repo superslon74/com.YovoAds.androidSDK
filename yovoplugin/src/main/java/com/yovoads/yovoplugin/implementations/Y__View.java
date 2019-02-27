@@ -3,6 +3,7 @@ package com.yovoads.yovoplugin.implementations;
 import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatDelegate;
 import android.util.TypedValue;
 import android.view.ViewGroup;
 import android.view.Window;
