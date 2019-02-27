@@ -21,10 +21,10 @@ import com.yovoads.yovoplugin.common.EAdNetworkType;
 import com.yovoads.yovoplugin.common.EPivol;
 import com.yovoads.yovoplugin.common.EScreenOrientation;
 import com.yovoads.yovoplugin.core.YImage;
-import com.yovoads.yovoplugin.implementations.Y__View;
+import com.yovoads.yovoplugin.implementations.YViewActivity;
 
 
-public class YRewardView extends Y__View {
+public class YRewardView extends YViewActivity {
 
     private YRewardTimer m_yRewardTimer = null;
 

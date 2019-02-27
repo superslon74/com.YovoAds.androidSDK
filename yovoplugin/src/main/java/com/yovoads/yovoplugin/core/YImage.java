@@ -1,17 +1,14 @@
 package com.yovoads.yovoplugin.core;
 
 import android.content.Context;
-import android.graphics.Matrix;
-import android.graphics.drawable.Drawable;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
 import com.yovoads.yovoplugin.DI;
-import com.yovoads.yovoplugin.YovoSDK;
 import com.yovoads.yovoplugin.common.EPivol;
 
-public class YImage extends android.support.v7.widget.AppCompatImageView {
+public class YImage extends ImageView{
 
     public int m_posX = 0;
     public int m_posY = 0;

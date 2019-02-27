@@ -3,7 +3,6 @@ package com.yovoads.yovoplugin.implementations;
 import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatDelegate;
 import android.util.TypedValue;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -16,7 +15,7 @@ import com.yovoads.yovoplugin.common.EAdNetworkType;
 import com.yovoads.yovoplugin.common.EPivol;
 import com.yovoads.yovoplugin.core.YImage;
 
-public abstract class Y__View extends Activity {
+public abstract class YViewActivity extends Activity {
 
     protected boolean m_isFirst = true;
     protected FrameLayout m_frameLayout = null;
@@ -45,6 +44,11 @@ public abstract class Y__View extends Activity {
         if(_idResource > 0) {
             _image.setImageResource(_idResource);
         }
+
+        return CreateImageView(_image, _widthImageOR, _heightImageOR, _scaleRelativelyScreenHeight, _offsetLeft, _offsetTop, _pivolX, _pivolY);
+    }
+
+    protected YImage CreateImageView(YImage _image, float _widthImageOR, float _heightImageOR, float _scaleRelativelyScreenHeight, float _offsetLeft, float _offsetTop, EPivol _pivolX, EPivol _pivolY) {
         float _cof = _widthImageOR / _heightImageOR;
         float _height = _heightImageOR * DI._DISPLAY_HEIGHT / _heightImageOR * _scaleRelativelyScreenHeight;
         int _width = (int) (_cof * _height);

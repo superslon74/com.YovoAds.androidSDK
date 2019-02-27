@@ -82,13 +82,13 @@ public class YBannerBackground extends Fragment {
                 {
                     FragmentTransaction _ft = getFragmentManager().beginTransaction();
                     _ft.show(YBannerBackground.getInstance());
-                    _ft.commit();
+                    _ft.commitAllowingStateLoss();
                 }
                 else
                 {
                     FragmentTransaction _ft = getFragmentManager().beginTransaction();
                     _ft.hide(YBannerBackground.getInstance());
-                    _ft.commit();
+                    _ft.commitAllowingStateLoss();
                 }
             }
         });
@@ -103,7 +103,7 @@ public class YBannerBackground extends Fragment {
             {
                 FragmentTransaction _ft = getFragmentManager().beginTransaction();
                 getView().setBackgroundColor(Color.parseColor(_color));
-                _ft.commit();
+                _ft.commitAllowingStateLoss();
             }
         });
     }

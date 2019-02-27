@@ -1,33 +1,27 @@
 package com.yovoads.yovoplugin.implementations.interstitial;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.TypedValue;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.yovoads.yovoplugin.DI;
 import com.yovoads.yovoplugin.R;
+import com.yovoads.yovoplugin.YovoSDK;
 import com.yovoads.yovoplugin.common.EAdNetworkType;
 import com.yovoads.yovoplugin.common.EPivol;
 import com.yovoads.yovoplugin.common.EScreenOrientation;
 import com.yovoads.yovoplugin.core.YImage;
-import com.yovoads.yovoplugin.implementations.Y__View;
+import com.yovoads.yovoplugin.implementations.YViewActivity;
 
-public class YInterstitialView extends Y__View
+public class YInterstitialView extends YViewActivity
 {
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,9 +31,7 @@ public class YInterstitialView extends Y__View
         if(DI.m_activity.getResources().getConfiguration().orientation == 0){
 
         }
-
     }
-
 
     // Вызывается в начале "активного" состояния.
     @Override
@@ -93,11 +85,10 @@ public class YInterstitialView extends Y__View
             }
         });*/
 
-
         float _posY = 0.63f;
 
-
-        YImage _star3 = CreateImageView(R.drawable.star, 1f, 1f, 0.044f, 0.5f, _posY, EPivol._CENTER, EPivol._CENTER);
+        YImage _star3 = CreateImageView(-1, 1f, 1f, 0.044f, 0.5f, _posY, EPivol._CENTER, EPivol._CENTER);
+        _star3.setImageResource(R.drawable.star);
 
         ImageView _star1 = CreateImageView(R.drawable.star, 1f, 1f, 0.044f, 0.5f, _posY, EPivol._CENTER, EPivol._CENTER);
         _star1.setX(_star3.m_posX - (int)(2.6f * (float) _star3.m_width));
@@ -158,7 +149,8 @@ public class YInterstitialView extends Y__View
         _bgBotton.setScaleX(10);
 
         float _posY = 0.89f;
-        YImage _star3 = CreateImageView(R.drawable.star, 1f, 1f, 0.08f, 0.5f, _posY, EPivol._CENTER, EPivol._CENTER);
+        YImage _star3 = CreateImageView(-1, 1f, 1f, 0.08f, 0.5f, _posY, EPivol._CENTER, EPivol._CENTER);
+        _star3.setImageResource(R.drawable.star);
 
         ImageView _star1 = CreateImageView(R.drawable.star, 1f, 1f, 0.08f, 0.5f, _posY, EPivol._CENTER, EPivol._CENTER);
         _star1.setX(_star3.m_posX - (int)(2.6f * (float) _star3.m_width));

@@ -59,7 +59,7 @@ public class YFragments extends FragmentActivity
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.add(_framelayout.getId(),  YBannerBackground.getInstance());
                 fragmentTransaction.add(_framelayout.getId(),  YBannerView.getInstance());
-                fragmentTransaction.commit();
+                fragmentTransaction.commitAllowingStateLoss();
             }
         });
     }

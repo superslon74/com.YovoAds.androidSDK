@@ -27,7 +27,6 @@ android {
 }
 
 dependencies {
-    //implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
 
 
@@ -47,9 +46,6 @@ dependencies {
     implementation 'com.facebook.android:audience-network-sdk:5.1.0'
     implementation project(":unity-ads 3.0.0")
 
-//    implementation project(':eventbus-3.0.0')
-//    implementation project(':okhttp-3.5.0')
-//    implementation project(':okio-1.11.0')
 
 }
 

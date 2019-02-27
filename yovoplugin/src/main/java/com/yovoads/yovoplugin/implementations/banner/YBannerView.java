@@ -282,7 +282,7 @@ public class YBannerView extends Fragment
             {
                 FragmentTransaction _ft = getFragmentManager().beginTransaction();
                 _ft.show(mc_this);
-                _ft.commit();
+                _ft.commitAllowingStateLoss();
             }
         });
     }
@@ -297,7 +297,7 @@ public class YBannerView extends Fragment
             {
                 FragmentTransaction _ft = getFragmentManager().beginTransaction();
                 _ft.hide(mc_this);
-                _ft.commit();
+                _ft.commitAllowingStateLoss();
             }
         });
     }

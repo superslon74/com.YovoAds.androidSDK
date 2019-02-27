@@ -19,6 +19,9 @@
             android:name=".implementations.reward.YRewardView"
             android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen" />
 
+        <activity
+            android:name=".implementations.YViewActivity"
+            android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen" />
     </application>
 
 </manifest>
