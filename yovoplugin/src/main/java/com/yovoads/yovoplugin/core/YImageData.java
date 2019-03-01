@@ -32,16 +32,16 @@ public class YImageData {
         _image.setLayoutParams(new FrameLayout.LayoutParams(_width, _height));
     }
 
-    public void SetPivol(EPivol _pivolX, EPivol _pivolY) {
-        SetPivol(m_image, _pivolX, _pivolY, (float) m_width, (float) m_height);
+    public void SetPivol(EPivol _ePivolX, EPivol _ePivolY) {
+        SetPivol(m_image, _ePivolX, _ePivolY, (float) m_width, (float) m_height);
     }
 
-    public static void SetPivol(ImageView _image, EPivol _pivolX, EPivol _pivolY, float _width, float _height) {
+    public static void SetPivol(ImageView _image, EPivol _ePivolX, EPivol _ePivolY, float _width, float _height) {
 
         ViewGroup.MarginLayoutParams mlp = (ViewGroup.MarginLayoutParams) _image.getLayoutParams();
         mlp.setMargins(
-                (int) (((_pivolX == EPivol._CENTER) ? -0.5f : (_pivolX == EPivol._RIGHT) ? -1.0f : 0.0f) * _width),
-                (int) (((_pivolY == EPivol._CENTER) ? -0.5f : (_pivolY == EPivol._BOTTON) ? -1.0f : 0.0f) * _height),
+                (int) (((_ePivolX == EPivol._CENTER) ? -0.5f : (_ePivolX == EPivol._RIGHT) ? -1.0f : 0.0f) * _width),
+                (int) (((_ePivolY == EPivol._CENTER) ? -0.5f : (_ePivolY == EPivol._BOTTON) ? -1.0f : 0.0f) * _height),
                 mlp.rightMargin, mlp.bottomMargin);
     }
 

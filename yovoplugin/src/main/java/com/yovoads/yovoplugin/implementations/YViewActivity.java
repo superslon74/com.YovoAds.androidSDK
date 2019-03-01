@@ -32,7 +32,8 @@ public abstract class YViewActivity extends Activity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         m_frameLayout = new FrameLayout(DI.m_activity);
-        m_frameLayout.setLayoutParams(new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT));
+        //m_frameLayout.setLayoutParams(new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT));
+        m_frameLayout.setLayoutParams(new FrameLayout.LayoutParams(DI._DISPLAY_WIDTH, DI._DISPLAY_HEIGHT));
     }
 
     @Override
@@ -40,10 +41,10 @@ public abstract class YViewActivity extends Activity {
         super.onResume();
     }
 
-    protected abstract void SetOrientationPortrait(float _autoScaleWidth);
-    protected abstract void SetOrientationLandscape(float _autoScaleWidth);
+    protected abstract void SetOrientationPortrait();
+    protected abstract void SetOrientationLandscape();
 
-    protected ImageView CreateImageView(int _idResource, float _widthImageOR, float _heightImageOR, float _scaleRelativelyScreenHeight, float _offsetLeft, float _offsetTop, EPivol _pivolX, EPivol _pivolY) {
+    protected ImageView CreateImageView2(int _idResource, float _widthImageOR, float _heightImageOR, float _scaleRelativelyScreenHeight, float _offsetLeft, float _offsetTop, EPivol _ePivolX, EPivol _ePivolY) {
         ImageView _image = new ImageView(DI.m_activity);
         if(_idResource > 0) {
             _image.setImageResource(_idResource);
@@ -54,14 +55,32 @@ public abstract class YViewActivity extends Activity {
         int _width = (int) (_cof * _height);
 
         YImageData.SetSize(_image, _width, (int)_height);
-        YImageData.SetPivol(_image, _pivolX, _pivolY, (float)_width, _height);
+        YImageData.SetPivol(_image, _ePivolX, _ePivolY, (float)_width, _height);
+        YImageData.SetPos(_image, _offsetLeft, _offsetTop);
+
+        //m_frameLayout.addView(_image);
+        return _image;
+    }
+
+    protected ImageView CreateImageView(int _idResource, float _widthImageOR, float _heightImageOR, float _scaleRelativelyScreenHeight, float _offsetLeft, float _offsetTop, EPivol _ePivolX, EPivol _ePivolY) {
+        ImageView _image = new ImageView(DI.m_activity);
+        if(_idResource > 0) {
+            _image.setImageResource(_idResource);
+        }
+
+        float _cof = _widthImageOR / _heightImageOR;
+        float _height = _heightImageOR * DI._DISPLAY_HEIGHT / _heightImageOR * _scaleRelativelyScreenHeight;
+        int _width = (int) (_cof * _height);
+
+        YImageData.SetSize(_image, _width, (int)_height);
+        YImageData.SetPivol(_image, _ePivolX, _ePivolY, (float)_width, _height);
         YImageData.SetPos(_image, _offsetLeft, _offsetTop);
 
         m_frameLayout.addView(_image);
         return _image;
     }
 
-    protected YImageData CreateYImageDataView(int _idResource, float _widthImageOR, float _heightImageOR, float _scaleRelativelyScreenHeight, float _offsetLeft, float _offsetTop, EPivol _pivolX, EPivol _pivolY) {
+    protected YImageData CreateYImageDataView(int _idResource, float _widthImageOR, float _heightImageOR, float _scaleRelativelyScreenHeight, float _offsetLeft, float _offsetTop, EPivol _ePivolX, EPivol _ePivolY) {
         YImageData _yImageData = new YImageData(DI.m_activity, _idResource);
         if(_idResource > 0) {
             _yImageData.m_image.setImageResource(_idResource);
@@ -72,7 +91,7 @@ public abstract class YViewActivity extends Activity {
         int _width = (int) (_cof * _height);
 
         _yImageData.SetSize(_width, (int)_height);
-        _yImageData.SetPivol(_pivolX, _pivolY);
+        _yImageData.SetPivol(_ePivolX, _ePivolY);
         _yImageData.SetPos(_offsetLeft, _offsetTop);
 
         m_frameLayout.addView(_yImageData.m_image);

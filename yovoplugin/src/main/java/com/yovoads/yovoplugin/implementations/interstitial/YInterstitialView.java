@@ -39,16 +39,15 @@ public class YInterstitialView extends YViewActivity
 
         if (m_isFirst) {
             m_isFirst = false;
-            float _autoScaleWidth = ((float) DI._DISPLAY_WIDTH / (float) DI._DISPLAY_HEIGHT) / (4f / 3f);
 
             if (DI._SCREEN_ORIENTATION == EScreenOrientation._PORTRAIT) {
                 m_frameLayout.setBackgroundColor(Color.parseColor("#FFFFFF"));
                 setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-                SetOrientationPortrait(_autoScaleWidth);
+                SetOrientationPortrait();
             } else {
                 m_frameLayout.setBackgroundColor(Color.parseColor("#000000"));
                 setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-                SetOrientationLandscape(_autoScaleWidth);
+                SetOrientationLandscape();
             }
 
             m_frameLayout.setOnClickListener(new View.OnClickListener() {
@@ -65,7 +64,7 @@ public class YInterstitialView extends YViewActivity
     }
 
     @Override
-    protected void SetOrientationPortrait(float _autoScaleWidth) {
+    protected void SetOrientationPortrait() {
 
         float _scaleH = (((float) DI._DISPLAY_WIDTH / YInterstitial.m_adUnitDataActive.m_screenWidth) * YInterstitial.m_adUnitDataActive.m_screenHeight) / (float) DI._DISPLAY_HEIGHT;
         ImageView _screen = CreateImageView(-1,YInterstitial.m_adUnitDataActive.m_screenWidth, YInterstitial.m_adUnitDataActive.m_screenHeight, _scaleH, 0.5f, 0.0f, EPivol._CENTER, EPivol._TOP);
@@ -79,7 +78,7 @@ public class YInterstitialView extends YViewActivity
             }
         });
 
-        float _posY = 0.63f;
+        float _posY = 0.66f;
 
         YImageData _star3 = CreateYImageDataView(R.drawable.star, 1f, 1f, 0.044f, 0.5f, _posY, EPivol._CENTER, EPivol._CENTER);
 
@@ -110,7 +109,7 @@ public class YInterstitialView extends YViewActivity
             }
         });
 
-        TextView _textTitle = CreateTextView(0.037f, Gravity.CENTER_HORIZONTAL, 0.0f, 0.55f, 0.0f, 0.0f);
+        TextView _textTitle = CreateTextView(0.037f, Gravity.CENTER_HORIZONTAL, 0.0f, 0.56f, 0.0f, 0.0f);
         _textTitle.setText(YInterstitial.m_adUnitDataActive.m_title);
         //_textTitle.setTextColor(Color.parseColor("#00C6FF"));
 
@@ -123,7 +122,7 @@ public class YInterstitialView extends YViewActivity
     }
 
     @Override
-    protected void SetOrientationLandscape(float _autoScaleWidth) {
+    protected void SetOrientationLandscape() {
 
         ImageView _screen = CreateImageView(-1, YInterstitial.m_adUnitDataActive.m_screenWidth, YInterstitial.m_adUnitDataActive.m_screenHeight, 0.721f, 0.5f, 0.0f, EPivol._CENTER, EPivol._TOP);
         _screen.setImageBitmap(YInterstitial.m_adUnitDataActive.m_bitmapScreen);
