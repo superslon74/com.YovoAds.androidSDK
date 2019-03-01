@@ -1,14 +1,12 @@
-package com.yovoads.yovoplugin.common;
+package com.yovoads.yovoplugin.core;
 
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-import android.util.Log;
 
 import com.yovoads.yovoplugin.DI;
 import com.yovoads.yovoplugin.YovoSDK;
+import com.yovoads.yovoplugin.common.EAdUnitPrice;
 import com.yovoads.yovoplugin.core.AdUnit.Rewards;
-
-import java.util.Date;
 
 public class dbLocal {
 

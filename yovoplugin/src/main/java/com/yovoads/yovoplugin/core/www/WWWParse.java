@@ -12,7 +12,7 @@ import com.yovoads.yovoplugin.core.Scenario.ScenarioReward;
 import com.yovoads.yovoplugin.core.YTimer;
 import com.yovoads.yovoplugin.core.www.extra._QuratorSetting;
 import com.yovoads.yovoplugin.core.www.extra._QuratorSettingScenario;
-import com.yovoads.yovoplugin.common.dbLocal;
+import com.yovoads.yovoplugin.core.dbLocal;
 
 public class WWWParse implements IYHttpConnectResult {
 
@@ -91,48 +91,31 @@ public class WWWParse implements IYHttpConnectResult {
     {
         for (_QuratorSettingScenario _scenario : _quratorActive.ml_quratorSettingScenario)
         {
-            if(_scenario.me_adUnitType == EAdUnitType._BANNER)
-            {
-                if(ScenarioBanner.getInstance() == null){
-                    Log.e("QQQQ", "111");
-                }
-                if(_scenario.ml_quratorScenarioQueueRule == null){
-                    Log.e("QQQQ", "222");
-                }
-                if(_quratorActive.md_quratorAdNetworksAvailable.get(EAdUnitType._BANNER) == null){
-                    Log.e("QQQQ", "333");
-                }
+            if(_scenario.me_adUnitType == EAdUnitType._BANNER) {
                 ScenarioBanner.getInstance().SetScenario(_scenario.ml_quratorScenarioQueueRule, _quratorActive.md_quratorAdNetworksAvailable.get(EAdUnitType._BANNER));
             }
-            else if(_scenario.me_adUnitType == EAdUnitType._INTERSTITIAL)
-            {
+            else if(_scenario.me_adUnitType == EAdUnitType._INTERSTITIAL) {
                 ScenarioInterstitial.getInstance().SetScenario(_scenario.ml_quratorScenarioQueueRule, _quratorActive.md_quratorAdNetworksAvailable.get(EAdUnitType._INTERSTITIAL));
             }
-            else if(_scenario.me_adUnitType == EAdUnitType._REWARD)
-            {
+            else if(_scenario.me_adUnitType == EAdUnitType._REWARD) {
                 ScenarioReward.getInstance().SetScenario(_scenario.ml_quratorScenarioQueueRule, _quratorActive.md_quratorAdNetworksAvailable.get(EAdUnitType._REWARD));
             }
         }
         _quratorActive = null;
     }
 
-    private void ScenarioCheckUpdate(String _json)
-    {
+    private void ScenarioCheckUpdate(String _json) {
         long _modified = JsonParser.GetScenarioCheckUpdate(_json);
-        if(_modified > 0)
-        {
-            if(_modified > dbLocal.getInstance().GetScenarioModified())
-            {
+        if(_modified > 0) {
+            if(_modified > dbLocal.getInstance().GetScenarioModified()) {
                 WWWRequest.getInstance().SendScenarioGet();
             }
         }
     }
 
-    private void ScenarioReset(String _json)
-    {
+    private void ScenarioReset(String _json) {
         EAdUnitType _adUnitType = JsonParser.GetScenarioReset(_json);
-        switch (_adUnitType)
-        {
+        switch (_adUnitType) {
             case _BANNER:
                 ScenarioBanner.getInstance().ResetScenario();
                 break;

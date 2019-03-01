@@ -2,22 +2,20 @@ package com.yovoads.yovoplugin.implementations.reward;
 
 import android.os.AsyncTask;
 import android.os.SystemClock;
-import android.widget.ImageView;
 
-import com.yovoads.yovoplugin.DI;
-import com.yovoads.yovoplugin.YovoSDK;
-import com.yovoads.yovoplugin.core.YImage;
+
+import com.yovoads.yovoplugin.core.YImageData;
 
 public class YRewardTimer extends AsyncTask<Void, Float, Void> {
 
     private float m_progressMax = 0;
-    private YImage m_progressBg = null;
-    private YImage m_progressValue = null;
+    private YImageData m_progressBg = null;
+    private YImageData m_progressValue = null;
 
     private YRewardTimer() {
     }
 
-    public YRewardTimer(float _progressMax, YImage _progressBg, YImage _progressValue) {
+    public YRewardTimer(float _progressMax, YImageData _progressBg, YImageData _progressValue) {
         m_progressMax = _progressMax;
         m_progressBg = _progressBg;
         m_progressValue = _progressValue;
@@ -41,8 +39,8 @@ public class YRewardTimer extends AsyncTask<Void, Float, Void> {
         if (_step > 1) {
             _step = 1f;
         }
-        m_progressBg.setScaleX(_step);
-        m_progressValue.setX((float) m_progressValue.m_posX + (_step * (float) m_progressBg.m_width));
+        m_progressBg.m_image.setScaleX(_step);
+        m_progressValue.m_image.setX((float) m_progressValue.m_posX + (_step * (float) m_progressBg.m_width));
     }
 
     @Override

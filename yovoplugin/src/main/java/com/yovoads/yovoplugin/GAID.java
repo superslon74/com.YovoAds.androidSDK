@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.AsyncTask;
 
 import com.google.android.gms.ads.identifier.AdvertisingIdClient;
-import com.yovoads.yovoplugin.common.dbLocal;
+import com.yovoads.yovoplugin.core.dbLocal;
 
 
 public class GAID extends AsyncTask<Context, Void, String> {

@@ -1,19 +1,23 @@
 package com.yovoads.yovoplugin.implementations;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.yovoads.yovoplugin.DI;
 import com.yovoads.yovoplugin.common.EAdNetworkType;
 import com.yovoads.yovoplugin.common.EPivol;
-import com.yovoads.yovoplugin.core.YImage;
+import com.yovoads.yovoplugin.core.YImageData;
+import com.yovoads.yovoplugin.implementations.interstitial.YInterstitial;
 
 public abstract class YViewActivity extends Activity {
 
@@ -39,26 +43,40 @@ public abstract class YViewActivity extends Activity {
     protected abstract void SetOrientationPortrait(float _autoScaleWidth);
     protected abstract void SetOrientationLandscape(float _autoScaleWidth);
 
-    protected YImage CreateImageView(int _idResource, float _widthImageOR, float _heightImageOR, float _scaleRelativelyScreenHeight, float _offsetLeft, float _offsetTop, EPivol _pivolX, EPivol _pivolY) {
-        YImage _image = new YImage(DI.m_activity);
+    protected ImageView CreateImageView(int _idResource, float _widthImageOR, float _heightImageOR, float _scaleRelativelyScreenHeight, float _offsetLeft, float _offsetTop, EPivol _pivolX, EPivol _pivolY) {
+        ImageView _image = new ImageView(DI.m_activity);
         if(_idResource > 0) {
             _image.setImageResource(_idResource);
         }
 
-        return CreateImageView(_image, _widthImageOR, _heightImageOR, _scaleRelativelyScreenHeight, _offsetLeft, _offsetTop, _pivolX, _pivolY);
-    }
-
-    protected YImage CreateImageView(YImage _image, float _widthImageOR, float _heightImageOR, float _scaleRelativelyScreenHeight, float _offsetLeft, float _offsetTop, EPivol _pivolX, EPivol _pivolY) {
         float _cof = _widthImageOR / _heightImageOR;
         float _height = _heightImageOR * DI._DISPLAY_HEIGHT / _heightImageOR * _scaleRelativelyScreenHeight;
         int _width = (int) (_cof * _height);
-        _image.SetSize(_width, (int)_height);
 
-        _image.SetPivol(_pivolX, _pivolY);
-        _image.SetPos(_offsetLeft, _offsetTop);
+        YImageData.SetSize(_image, _width, (int)_height);
+        YImageData.SetPivol(_image, _pivolX, _pivolY, (float)_width, _height);
+        YImageData.SetPos(_image, _offsetLeft, _offsetTop);
 
         m_frameLayout.addView(_image);
         return _image;
+    }
+
+    protected YImageData CreateYImageDataView(int _idResource, float _widthImageOR, float _heightImageOR, float _scaleRelativelyScreenHeight, float _offsetLeft, float _offsetTop, EPivol _pivolX, EPivol _pivolY) {
+        YImageData _yImageData = new YImageData(DI.m_activity, _idResource);
+        if(_idResource > 0) {
+            _yImageData.m_image.setImageResource(_idResource);
+        }
+
+        float _cof = _widthImageOR / _heightImageOR;
+        float _height = _heightImageOR * DI._DISPLAY_HEIGHT / _heightImageOR * _scaleRelativelyScreenHeight;
+        int _width = (int) (_cof * _height);
+
+        _yImageData.SetSize(_width, (int)_height);
+        _yImageData.SetPivol(_pivolX, _pivolY);
+        _yImageData.SetPos(_offsetLeft, _offsetTop);
+
+        m_frameLayout.addView(_yImageData.m_image);
+        return _yImageData;
     }
 
     protected TextView CreateTextView(float _scaleRelativelyScreenHeight, int _gravity, float _offsetLeft, float _offsetTop, float _offsetRight, float _offsetBotton) {
@@ -84,6 +102,14 @@ public abstract class YViewActivity extends Activity {
             case _YOVO_ADVERTISING:
                 _textAds.setTextColor(Color.parseColor("#86da51"));
                 break;
+        }
+    }
+
+    protected void OnClick(String _clickURL){
+        try {
+            startActivity(new Intent("android.intent.action.VIEW", Uri.parse("googlechrome://navigate?url=" + _clickURL)));
+        } catch (Exception exc) {
+            startActivity(new Intent("android.intent.action.VIEW", Uri.parse(_clickURL)));
         }
     }
 

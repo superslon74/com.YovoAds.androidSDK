@@ -8,8 +8,7 @@ import com.yovoads.yovoplugin.common.EAdUnitPrice;
 import com.yovoads.yovoplugin.common.EAdUnitType;
 import com.yovoads.yovoplugin.common.IAdUnitOnMethod;
 import com.yovoads.yovoplugin.common.IAdUnitOnMethodReward;
-import com.yovoads.yovoplugin.common.dbLocal;
-import com.yovoads.yovoplugin.core.Scenario.ScenarioInterstitial;
+import com.yovoads.yovoplugin.core.dbLocal;
 import com.yovoads.yovoplugin.core.Scenario.ScenarioReward;
 import com.yovoads.yovoplugin.core.www.WWWRequest;
 import com.yovoads.yovoplugin.networks.viewRewards.ExampleReward;
@@ -19,8 +18,6 @@ import com.yovoads.yovoplugin.networks.viewRewards.RewardExchange;
 import com.yovoads.yovoplugin.networks.viewRewards.RewardFacebook;
 import com.yovoads.yovoplugin.networks.viewRewards.RewardUnityAds;
 import com.yovoads.yovoplugin.networks.viewRewards.RewardYovoAdvertising;
-
-import java.util.Date;
 
 public class RewardView implements IAdUnitOnMethod, IAdUnitOnMethodReward {
 

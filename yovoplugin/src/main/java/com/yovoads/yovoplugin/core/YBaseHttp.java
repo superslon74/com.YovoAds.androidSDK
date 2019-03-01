@@ -1,4 +1,6 @@
-package com.yovoads.yovoplugin.common;
+package com.yovoads.yovoplugin.core;
+
+import com.yovoads.yovoplugin.common.IYHttpConnectResult;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -12,7 +14,7 @@ import java.net.ProtocolException;
 import java.net.URL;
 
 
-public class YHttpConnection {
+public class YBaseHttp {
 
     public static String CreateConnect(String _url, String _postParams, IYHttpConnectResult _iHttpConnectResult) {
 

@@ -206,7 +206,6 @@ public class ScenarioBanner extends AScenario {
 
     @Override
     public void ShowNextAvailableAdUnit() {
-       // YovoSDK.ShowLog("ScenarioBanner", "ShowNextAvailableAdUnit=");
 
         boolean _isShowNextAvailableAdUnit = false;
         m_maskAdNetwork = 0;
@@ -223,7 +222,6 @@ public class ScenarioBanner extends AScenario {
         }
 
         if (!_isShowNextAvailableAdUnit) {
-            //YovoSDK.ShowLog("ScenarioBanner", "Banner all loadinFAILED");
             WWWRequest.getInstance().SendScenarioReset(EAdUnitType._BANNER);
         }
     }
@@ -238,8 +236,7 @@ public class ScenarioBanner extends AScenario {
     }
 
     @Override
-    public void ResetScenario()
-    {
+    public void ResetScenario() {
         super.ResetScenario();
         YovoSDK.ShowLog("ScenarioBanner", "ResetScenario");
         PullStartAwake();

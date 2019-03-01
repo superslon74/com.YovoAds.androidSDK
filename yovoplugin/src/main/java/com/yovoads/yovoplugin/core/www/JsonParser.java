@@ -1,13 +1,9 @@
 package com.yovoads.yovoplugin.core.www;
 
-import android.util.Log;
-
 import com.yovoads.yovoplugin.YovoSDK;
 import com.yovoads.yovoplugin.common.EAdNetworkType;
 import com.yovoads.yovoplugin.common.EAdUnitType;
-import com.yovoads.yovoplugin.common.EPostCommand;
-import com.yovoads.yovoplugin.common.EWwwCommand;
-import com.yovoads.yovoplugin.common.dbLocal;
+import com.yovoads.yovoplugin.core.dbLocal;
 import com.yovoads.yovoplugin.core.www.extra._QuratorSetting;
 import com.yovoads.yovoplugin.core.www.extra._QuratorSettingScenario;
 import com.yovoads.yovoplugin.core.www.extra._QuratorSettingScenarioRule;

@@ -8,7 +8,6 @@ import com.yovoads.yovoplugin.core.Scenario.ScenarioBanner;
 import com.yovoads.yovoplugin.core.Scenario.ScenarioInterstitial;
 import com.yovoads.yovoplugin.core.Scenario.ScenarioReward;
 import com.yovoads.yovoplugin.core.www.WWWRequest;
-import com.yovoads.yovoplugin.common.dbLocal;
 import com.yovoads.yovoplugin.networks.viewBanners.ExampleBanner;
 
 

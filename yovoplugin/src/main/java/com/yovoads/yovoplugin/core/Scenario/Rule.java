@@ -4,12 +4,12 @@ import com.yovoads.yovoplugin.common.EAdNetworkType;
 
 public class Rule {
 
-    private int m_idRule;
+    private int m_idRule = 0;
     private EAdNetworkType me_networkType;
-    private int m_countShowingMax;
-    private int m_countShowingRemain;
+    private int m_countShowingMax = -1;
+    private int m_countShowingRemain = -1;
 
-    private boolean m_isUsed;
+    private boolean m_isUsed = false;
 
 
     private Rule() {

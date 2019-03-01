@@ -3,7 +3,7 @@ package com.yovoads.yovoplugin.core.www.extra;
 
 import com.yovoads.yovoplugin.common.EAdNetworkType;
 import com.yovoads.yovoplugin.common.EAdUnitType;
-import com.yovoads.yovoplugin.common.dbLocal;
+import com.yovoads.yovoplugin.core.dbLocal;
 import com.yovoads.yovoplugin.core.www.JsonParser;
 
 import org.json.JSONArray;

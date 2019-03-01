@@ -1,7 +1,5 @@
 package com.yovoads.yovoplugin.core.AdUnit;
 
-import android.util.Log;
-
 import com.yovoads.yovoplugin.YovoSDK;
 import com.yovoads.yovoplugin.common.EAdNetworkType;
 import com.yovoads.yovoplugin.common.EAdUnitAdLoadingFailed;
@@ -10,7 +8,7 @@ import com.yovoads.yovoplugin.common.EAdUnitPrice;
 import com.yovoads.yovoplugin.common.EAdUnitType;
 import com.yovoads.yovoplugin.common.IAdUnitOnMethod;
 import com.yovoads.yovoplugin.common.EGravity;
-import com.yovoads.yovoplugin.common.dbLocal;
+import com.yovoads.yovoplugin.core.dbLocal;
 import com.yovoads.yovoplugin.core.Scenario.NextRuleId;
 import com.yovoads.yovoplugin.core.Scenario.ScenarioBanner;
 import com.yovoads.yovoplugin.core.www.WWWRequest;

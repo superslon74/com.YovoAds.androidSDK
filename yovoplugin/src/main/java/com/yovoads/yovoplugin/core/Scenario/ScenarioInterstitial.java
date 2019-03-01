@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 
 public class ScenarioInterstitial extends AScenario {
+
     private static ScenarioInterstitial mc_this = null;
     ////////////////////////////////////////////////////////////// ---  Constructor  --- //////////////////////////////////////////////////////////////
 

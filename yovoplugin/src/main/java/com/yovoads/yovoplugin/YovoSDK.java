@@ -13,10 +13,9 @@ import com.yovoads.yovoplugin.core.Scenario.ScenarioInterstitial;
 import com.yovoads.yovoplugin.core.Scenario.ScenarioReward;
 import com.yovoads.yovoplugin.core.YTimer;
 import com.yovoads.yovoplugin.core.www.WWWRequest;
-import com.yovoads.yovoplugin.common.dbLocal;
+import com.yovoads.yovoplugin.core.dbLocal;
 import com.yovoads.yovoplugin.implementations.reward.YRewardLoader;
 import com.yovoads.yovoplugin.implementations.banner.YFragments;
-import com.yovoads.yovoplugin.implementations.reward.YRewardView;
 
 
 public class YovoSDK {

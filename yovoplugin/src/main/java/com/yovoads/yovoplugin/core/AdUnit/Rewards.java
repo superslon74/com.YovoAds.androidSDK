@@ -5,13 +5,10 @@ import com.yovoads.yovoplugin.common.EAdNetworkType;
 import com.yovoads.yovoplugin.common.EAdUnitLoadingResult;
 import com.yovoads.yovoplugin.common.EAdUnitPrice;
 import com.yovoads.yovoplugin.common.IAdUnitType;
-import com.yovoads.yovoplugin.common.dbLocal;
+import com.yovoads.yovoplugin.core.dbLocal;
 import com.yovoads.yovoplugin.core.Scenario.ScenarioReward;
-import com.yovoads.yovoplugin.core.YTimer;
 
-import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 

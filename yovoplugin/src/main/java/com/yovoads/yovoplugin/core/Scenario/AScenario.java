@@ -14,10 +14,9 @@ import java.util.Iterator;
 public abstract class AScenario
 {
 
-    protected AScenario         	mc_this;
-    //protected int 					m_indexScenario;
-    protected int 					m_maskAdNetwork;
-    protected ArrayList<Rule>			ml_listRules =new ArrayList<Rule>();
+    protected AScenario         	mc_this = null;
+    protected int 					m_maskAdNetwork = 0;
+    protected ArrayList<Rule>		ml_listRules = new ArrayList<Rule>();
 
 
     protected void SetScenario(ArrayList<_QuratorSettingScenarioRule> _rulesWww, ArrayList<EAdNetworkType> _alNetworksAvailable)

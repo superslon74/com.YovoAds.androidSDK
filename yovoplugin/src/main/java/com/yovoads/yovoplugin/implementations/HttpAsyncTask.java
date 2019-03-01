@@ -5,13 +5,13 @@ import android.os.AsyncTask;
 import com.yovoads.yovoplugin.DI;
 import com.yovoads.yovoplugin.common.EPostCommand;
 import com.yovoads.yovoplugin.common.IYHttpConnectResult;
-import com.yovoads.yovoplugin.common.YHttpConnection;
+import com.yovoads.yovoplugin.core.YBaseHttp;
 import com.yovoads.yovoplugin.common.EAdUnitType;
 import com.yovoads.yovoplugin.common.EWwwCommand;
 import com.yovoads.yovoplugin.core.www.JsonParser;
 
 
-public class HttpBase extends AsyncTask<Integer, Void, String>
+public class HttpAsyncTask extends AsyncTask<Integer, Void, String>
 {
     private String m_url = "";
     private EWwwCommand m_wwwCommand = null;
@@ -19,7 +19,7 @@ public class HttpBase extends AsyncTask<Integer, Void, String>
 
     private IYHttpConnectResult mi_yHttpConnectResult = null;
 
-    public HttpBase(EWwwCommand _wwwCommand, String _url, IYHttpConnectResult _yHttpConnectResult, EAdUnitType _adUnitType)
+    public HttpAsyncTask(EWwwCommand _wwwCommand, String _url, IYHttpConnectResult _yHttpConnectResult, EAdUnitType _adUnitType)
     {
         m_wwwCommand = _wwwCommand;
         m_url = _url + EWwwCommand.GetValue(m_wwwCommand) + "?id=" + DI.m_yovoAdsAccountId + "&token=" + DI.m_yovoAdsToken;
@@ -30,7 +30,7 @@ public class HttpBase extends AsyncTask<Integer, Void, String>
     @Override
     protected String doInBackground(Integer... _postParams)
     {
-        return YHttpConnection.CreateConnect(m_url, GetParamsDefault(_postParams[0], me_adUnitType), mi_yHttpConnectResult);
+        return YBaseHttp.CreateConnect(m_url, GetParamsDefault(_postParams[0], me_adUnitType), mi_yHttpConnectResult);
     }
 
     private String GetParamsDefault(int _ruleID, EAdUnitType _adUnitType)

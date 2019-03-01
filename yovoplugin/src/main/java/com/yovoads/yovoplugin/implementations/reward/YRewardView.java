@@ -20,7 +20,7 @@ import com.yovoads.yovoplugin.YovoSDK;
 import com.yovoads.yovoplugin.common.EAdNetworkType;
 import com.yovoads.yovoplugin.common.EPivol;
 import com.yovoads.yovoplugin.common.EScreenOrientation;
-import com.yovoads.yovoplugin.core.YImage;
+import com.yovoads.yovoplugin.core.YImageData;
 import com.yovoads.yovoplugin.implementations.YViewActivity;
 
 
@@ -29,8 +29,8 @@ public class YRewardView extends YViewActivity {
     private YRewardTimer m_yRewardTimer = null;
 
     private VideoView m_video = null;
-    private YImage m_progressBg = null;
-    private YImage m_progressValue = null;
+    private YImageData m_progressBg = null;
+    private YImageData m_progressValue = null;
     private ImageView m_install = null;
     private ImageView m_screen = null;
     private ImageView m_close = null;
@@ -82,14 +82,7 @@ public class YRewardView extends YViewActivity {
         m_install.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try {
-                    Intent intent = new Intent("android.intent.action.VIEW", Uri.parse("googlechrome://navigate?url=" + YReward.m_adUnitDataActive.m_clickURL));
-                    startActivity(intent);
-                } catch (Exception exc) {
-                    Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(YReward.m_adUnitDataActive.m_clickURL));
-                    startActivity(intent);
-                }
-
+                OnClick(YReward.m_adUnitDataActive.m_clickURL);
                 YReward.m_callbackActive.OnAdClicked();
                 Quit();
             }
@@ -99,14 +92,14 @@ public class YRewardView extends YViewActivity {
         _imageProgressRect.setColorFilter(Color.parseColor("#898989")); // 8989FF
         _imageProgressRect.setScaleY(0.13f);
 
-        m_progressBg = CreateImageView(R.drawable.progressbg, 100f, 5f,0.0233f, 0.5f, 0.93f, EPivol._CENTER, EPivol._CENTER);
-        m_progressBg.setColorFilter(Color.parseColor("#ff007e"));
-        m_progressBg.setScaleY(0.13f);
+        m_progressBg = CreateYImageDataView(R.drawable.progressbg,100f, 5f,0.0233f, 0.5f, 0.93f, EPivol._CENTER, EPivol._CENTER);
+        m_progressBg.m_image.setColorFilter(Color.parseColor("#ff007e"));
+        m_progressBg.m_image.setScaleY(0.13f);
 
-        m_progressValue = CreateImageView(R.drawable.but_close, 50.0f, 50.0f, 0.015f, 0.0f, 0.93f, EPivol._CENTER, EPivol._CENTER);
-        m_progressValue.setColorFilter(Color.parseColor("#ff007e"));
+        m_progressValue = CreateYImageDataView(R.drawable.but_close,50.0f, 50.0f, 0.015f, 0.0f, 0.93f, EPivol._CENTER, EPivol._CENTER);
+        m_progressValue.m_image.setColorFilter(Color.parseColor("#ff007e"));
         m_progressValue.m_posX = m_progressBg.m_posX - (int)((float)m_progressBg.m_width / 2f);
-        m_progressValue.setX(m_progressValue.m_posX);
+        m_progressValue.m_image.setX(m_progressValue.m_posX);
 
         m_close = CreateImageView(R.drawable.but_close, 50f, 50f, 0.05f, 0.005f, 0.005f, EPivol._LEFT, EPivol._TOP);
         m_close.setVisibility(View.GONE);
@@ -159,7 +152,7 @@ public class YRewardView extends YViewActivity {
                     m_yRewardTimer.cancel(true);
                 }
                 //m_progressValue.setX(m_progressValue.m_posX + m_progressBg.m_width);
-                m_progressBg.setScaleX(1);
+                m_progressBg.m_image.setScaleX(1);
                 m_video.setVisibility(View.GONE);
                 m_screen.setVisibility(View.VISIBLE);
                 m_close.setVisibility(View.VISIBLE);
