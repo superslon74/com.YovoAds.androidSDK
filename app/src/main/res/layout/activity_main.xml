@@ -113,16 +113,75 @@
                 android:minWidth="150dp"
                 android:text="RewardShowIgnor" />
 
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/but_toast_show"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="40dp"
+                android:minHeight="60dp"
+                android:minWidth="150dp"
+                android:text="Toast" />
+
+            <Button
+                android:id="@+id/but_popup_show1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:minHeight="60dp"
+                android:minWidth="150dp"
+                android:text="popup_1" />
+
+            <Button
+                android:id="@+id/but_popup_show2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:minHeight="60dp"
+                android:minWidth="150dp"
+                android:text="popup_2" />
+
+            <Button
+                android:id="@+id/but_popup_show3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:minHeight="60dp"
+                android:minWidth="150dp"
+                android:text="popup_3" />
+
+            <Button
+                android:id="@+id/but_appTryQuit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:minHeight="60dp"
+                android:minWidth="150dp"
+                android:text="Try Quit" />
+
             <Button
                 android:id="@+id/but_appQuit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginTop="140dp"
                 android:minHeight="60dp"
                 android:minWidth="150dp"
-                android:text="App Quit" />
+                android:text="Quit" />
         </LinearLayout>
 
     </LinearLayout>

@@ -16,6 +16,7 @@ import com.yovoads.yovoplugin.core.www.WWWRequest;
 import com.yovoads.yovoplugin.core.dbLocal;
 import com.yovoads.yovoplugin.implementations.reward.YRewardLoader;
 import com.yovoads.yovoplugin.implementations.banner.YFragments;
+import com.yovoads.yovoplugin.support.Support;
 
 
 public class YovoSDK {
@@ -31,16 +32,12 @@ public class YovoSDK {
             mi_OnUnitySDK = _iOnUnitySDK;
             DI.getInstance().Set(_activity, _yovoAdsAccountId, _yovoAdsToken, _packageName, _isCOPPA, _isTesting);
             YRewardLoader.CreateFolder();
+            Support.getInstance();
         }
         return mc_this;
     }
 
-    public void SetGaid() {
-        DI.getInstance().SetGaid();
-    }
-
     private YovoSDK() {
-        YovoSDK.ShowLog("YovoSDK", "getInstance");
     }
 
     public static void ShowLog(String _class, String _method) {
@@ -150,24 +147,24 @@ public class YovoSDK {
 
 
     public void ToastShow(int _showTime, String _message) {
-        //mc_platform.Call("ToastShow", new object[] { _showTime, _message });
+        Support.getInstance().ToastShow(_showTime, _message);
     }
 
-    public void PopupsShow(String _callBackParams, String _title, String _mess, String _butYes) {
-        //mc_platform.Call("ToastShow", new object[] { _callBackParams, _title, _mess, _butYes });
+    public void PopupsShow(String _title, String _mess, String _butYes) {
+        Support.getInstance().PopupsShow(_title, _mess, _butYes);
     }
 
-    public void PopupsShow(String _callBackParams, String _title, String _mess, String _butYes, String _butNo) {
-        //mc_platform.Call("ToastShow", new object[] { _callBackParams, _title, _mess, _butYes, _butNo });
+    public void PopupsShow(String _title, String _mess, String _butYes, String _butNo) {
+        Support.getInstance().PopupsShow(_title, _mess, _butYes, _butNo);
     }
 
-    public void PopupsShow(String _callBackParams, String _title, String _mess, String _butYes, String _butNo, String _butLaiter) {
-        //mc_platform.Call("ToastShow", new object[] { _callBackParams, _title, _mess, _butYes, _butNo, _butLaiter });
+    public void PopupsShow(String _title, String _mess, String _butYes, String _butNo, String _butLaiter) {
+        Support.getInstance().PopupsShow(_title, _mess, _butYes, _butNo, _butLaiter);
     }
 
 
-    public void AppTryQuit() {
-
+    public void AppTryQuit(int _systemLanguage) {
+        Support.getInstance().AppTryQuitShow(_systemLanguage);
     }
 
     public void AppQuit() {

@@ -23,7 +23,11 @@ public class GAID extends AsyncTask<Context, Void, String> {
             _adsIdClien = AdvertisingIdClient.getAdvertisingIdInfo(_context);
             try{
                 if (_adsIdClien != null) {
-                    _gaid = _adsIdClien.getId();
+                    if(_adsIdClien.isLimitAdTrackingEnabled()) {
+                        DI.getInstance().OnSetGaid("", "error 0 : isLimitAdTrackingEnabled=true");
+                    } else {
+                        _gaid = _adsIdClien.getId();
+                    }
                 }
             } catch (Exception e){
                 DI.getInstance().OnSetGaid("", "error 1 : " + e.toString());
@@ -32,8 +36,7 @@ public class GAID extends AsyncTask<Context, Void, String> {
             DI.getInstance().OnSetGaid("", "error 2 : " + e.toString());
         }
 
-        if(_gaid.isEmpty())
-        {
+        if(_gaid.isEmpty()) {
             _gaid = dbLocal.getInstance().GetGaid();
         }
 

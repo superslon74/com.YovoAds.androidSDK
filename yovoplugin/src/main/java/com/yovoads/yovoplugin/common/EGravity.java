@@ -7,9 +7,7 @@ public enum EGravity {
     _TOP_LEFT,
     _TOP_RIGHT,
     _BOTTON_LEFT,
-    _BOTTON_RIGHT,
-    _LEFT,
-    _RIGHT;
+    _BOTTON_RIGHT;
 
 
     public static EGravity GetName(int _index)
@@ -28,10 +26,6 @@ public enum EGravity {
                 return _BOTTON_LEFT;
             case  5:
                 return _BOTTON_RIGHT;
-            case 6:
-                return _LEFT;
-            case 7:
-                return _RIGHT;
         }
 
         return _BOTTON;
@@ -53,10 +47,6 @@ public enum EGravity {
                 return 4;
             case  _BOTTON_RIGHT:
                 return 5;
-            case _LEFT:
-                return 6;
-            case _RIGHT:
-                return 7;
         }
 
         return 1;

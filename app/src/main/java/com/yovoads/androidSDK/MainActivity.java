@@ -35,21 +35,6 @@ public class MainActivity extends Activity
 
         Init.initYovoSDK(MainActivity.this);
 
-
-
-
-
-        //new YRewardLoader().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, EAdNetworkType.GetValue(EAdNetworkType._CROSS_PROMOTION));
-
-
-
-
-
-//        Date now = new Date();
-//        Long longTime = new Long(now.getTime()/1000);
-        //YovoSDK.ShowLog("qw", longTime.intValue());
-
-
     }
 
     @Override
@@ -64,8 +49,6 @@ public class MainActivity extends Activity
         super.onResume();
         YTimer.getInstance().SetAppPause(false);
         YovoSDK.ShowLog("TIMER", "onResume");
-
-        //DI.m_activity.startActivity(new Intent(DI.m_activity, YRewardView.class));
     }
 
 }

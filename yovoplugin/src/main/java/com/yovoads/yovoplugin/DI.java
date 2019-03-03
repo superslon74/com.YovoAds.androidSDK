@@ -89,25 +89,7 @@ public class DI
             ChangeOrientationDevice();
     }
 
-    public void SetGaid()
-    {
-        GAID _getData = new GAID();
-        _getData.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, m_activity);
-    }
-
-    public void OnSetGaid(String _gaid, String _error)
-    {
-        if(_error.isEmpty()) {
-            _GAID = _gaid;
-        }
-        //_GAID = "___empty___";
-        YovoSDK.ShowLog("GAID_error", _error);
-        YovoSDK.ShowLog("GAID_GAID", _gaid);
-        YovoSDK.ShowLog("GAID_DID", _DID);
-        YovoSDK.mi_OnUnitySDK.OnSetGaid();
-    }
-
-    private static void ChangeOrientationDevice()
+    private void ChangeOrientationDevice()
     {
         DisplayMetrics metrics = new DisplayMetrics();
         m_activity.getWindowManager().getDefaultDisplay().getMetrics(metrics);
@@ -123,13 +105,13 @@ public class DI
         _DISPLAY_HEIGHT_DPI = (int)(_DISPLAY_HEIGHT / _DISPLAY_DPI);
        _IS_BANNER_HEIGHT_DOUBLE = (_DISPLAY_HEIGHT_DPI) < 720 ? 50 : 90;
 
+        SetGaid();
 
-
-        YovoSDK.ShowLog("SCREEN__DISPLAY_WIDTH", String.valueOf(_DISPLAY_WIDTH));
-        YovoSDK.ShowLog("SCREEN__DISPLAY_HEIGHT", String.valueOf(_DISPLAY_HEIGHT));
-        YovoSDK.ShowLog("SCREEN__DISPLAY_RATIO", String.valueOf(_DISPLAY_RATIO));
-        YovoSDK.ShowLog("SCREEN__density", String.valueOf(m_activity.getResources().getDisplayMetrics().density));
-        YovoSDK.ShowLog("SCREEN__densityDpi", String.valueOf(m_activity.getResources().getDisplayMetrics().densityDpi));
+//        YovoSDK.ShowLog("SCREEN__DISPLAY_WIDTH", String.valueOf(_DISPLAY_WIDTH));
+//        YovoSDK.ShowLog("SCREEN__DISPLAY_HEIGHT", String.valueOf(_DISPLAY_HEIGHT));
+//        YovoSDK.ShowLog("SCREEN__DISPLAY_RATIO", String.valueOf(_DISPLAY_RATIO));
+//        YovoSDK.ShowLog("SCREEN__density", String.valueOf(m_activity.getResources().getDisplayMetrics().density));
+//        YovoSDK.ShowLog("SCREEN__densityDpi", String.valueOf(m_activity.getResources().getDisplayMetrics().densityDpi));
 //        YovoSDK.ShowLog("SCREEN__heightPixels", String.valueOf(m_activity.getResources().getDisplayMetrics().heightPixels));
 //        YovoSDK.ShowLog("SCREEN__widthPixels", String.valueOf(m_activity.getResources().getDisplayMetrics().widthPixels));
 //        YovoSDK.ShowLog("SCREEN__scaledDensity", String.valueOf(m_activity.getResources().getDisplayMetrics().scaledDensity));
@@ -137,6 +119,29 @@ public class DI
 //        YovoSDK.ShowLog("SCREEN__ydpi", String.valueOf(m_activity.getResources().getDisplayMetrics().ydpi));
 //        YovoSDK.ShowLog("IS_BANNER_HEIGHT_DOUBLE", String.valueOf(_IS_BANNER_HEIGHT_DOUBLE));
     }
+
+    private boolean m_isFirst = true;
+    private void SetGaid()
+    {
+        if(m_isFirst) {
+            m_isFirst = false;
+            GAID _getData = new GAID();
+            _getData.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, m_activity);
+        }
+    }
+
+    public void OnSetGaid(String _gaid, String _error)
+    {
+        if(_error.isEmpty()) {
+            _GAID = _gaid;
+        }
+        //_GAID = "___empty___";
+        YovoSDK.ShowLog("GAID_error", _error);
+        YovoSDK.ShowLog("GAID_GAID", _gaid);
+        YovoSDK.ShowLog("GAID_DID", _DID);
+        YovoSDK.mi_OnUnitySDK.OnSetGaid();
+    }
+
 
     public int GetBannerHeight()
     {

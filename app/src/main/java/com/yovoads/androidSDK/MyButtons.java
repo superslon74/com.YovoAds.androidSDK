@@ -20,6 +20,11 @@ public class MyButtons {
     private Button m_butRewardShow;
     private Button m_butRewardShowIgnor;
 
+    private Button m_butToast;
+    private Button m_butPopup1;
+    private Button m_butPopup2;
+    private Button m_butPopup3;
+    private Button m_butAppTryQuit;
     private Button m_butAppQuit;
 
 
@@ -43,6 +48,11 @@ public class MyButtons {
         m_butInterShow = (Button) MainActivity.m_activity.findViewById(R.id.but_inter_show);
         m_butRewardShow = (Button) MainActivity.m_activity.findViewById(R.id.but_reward_show);
         m_butRewardShowIgnor = (Button) MainActivity.m_activity.findViewById(R.id.but_reward_showIgnor);
+        m_butToast = (Button) MainActivity.m_activity.findViewById(R.id.but_toast_show);
+        m_butPopup1 = (Button) MainActivity.m_activity.findViewById(R.id.but_popup_show1);
+        m_butPopup2 = (Button) MainActivity.m_activity.findViewById(R.id.but_popup_show2);
+        m_butPopup3 = (Button) MainActivity.m_activity.findViewById(R.id.but_popup_show3);
+        m_butAppTryQuit = (Button) MainActivity.m_activity.findViewById(R.id.but_appTryQuit);
         m_butAppQuit = (Button) MainActivity.m_activity.findViewById(R.id.but_appQuit);
 
         m_butBannerShow.setOnClickListener(new View.OnClickListener() {
@@ -132,6 +142,41 @@ public class MyButtons {
         });
 
 
+
+        m_butToast.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity.m_yovoSDK.ToastShow(0, "toast test");
+            }
+        });
+
+        m_butPopup1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity.m_yovoSDK.PopupsShow("_title", "_mess", "yes");
+            }
+        });
+
+        m_butPopup2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity.m_yovoSDK.PopupsShow("_title", "_mess", "yes", "not");
+            }
+        });
+
+        m_butPopup3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity.m_yovoSDK.PopupsShow("_title", "_mess", "yes", "not", "latter");
+            }
+        });
+
+        m_butAppTryQuit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity.m_yovoSDK.AppTryQuit(0);
+            }
+        });
 
         m_butAppQuit.setOnClickListener(new View.OnClickListener() {
             @Override

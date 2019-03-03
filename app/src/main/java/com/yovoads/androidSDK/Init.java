@@ -23,12 +23,12 @@ public class Init
     {
         MainActivity.m_yovoSDK = YovoSDK.getInstance(_activity, new IOnUnitySDK() {
 
-
             @Override
             public void OnSetGaid() {
 
                 MainActivity.m_yovoSDK.ScenarioInit();
                 MainActivity.m_yovoSDK.SetNetworksParams(true,true, false, true, false, false);
+
                 MainActivity.m_yovoSDK.AddNetworkAdmobData("ca-app-pub-3940256099942544~3347511713",
                         "ca-app-pub-3940256099942544/6300978111","","",
                         "ca-app-pub-3940256099942544/1033173712","","", "ca-app-pub-3940256099942544/5224354917");
@@ -36,8 +36,8 @@ public class Init
                         "YOUR_PLACEMENT_ID","2297129613849018_2297135987181714","",
                         "YOUR_PLACEMENT_ID","2297129613849018_2297139323848047","", "");
                 MainActivity.m_yovoSDK.AddNetworkUnityAdsData("14851");
-                MainActivity.m_yovoSDK.CreateBannerXml(m_bannerStartAwake, EGravity.GetIndex(m_gravity), m_isBackground, m_color);
 
+                MainActivity.m_yovoSDK.CreateBannerXml(m_bannerStartAwake, EGravity.GetIndex(m_gravity), m_isBackground, m_color);
                 MainActivity.m_yovoSDK.InterstitialSetPeriodShow(0);
 
                 MainActivity.m_yovoSDK.Start();
@@ -48,12 +48,33 @@ public class Init
             public void OnRewarded(boolean _isRewarded, String _key, String _value) {
                 YovoSDK.ShowLog("Main", String.valueOf(_isRewarded) + " <> " + _key + " <> " + _value);
             }
+
+            @Override
+            public void OnPopupsShow(int _butClick) {
+                if(_butClick == -99)	{
+                    YovoSDK.ShowLog("OnPopupsShow pressed", "Cancel");
+                } else if(_butClick < 0) {
+                    YovoSDK.ShowLog("OnPopupsShow pressed", "Esc");
+                }
+                else if(_butClick == 0) {
+                    YovoSDK.ShowLog("OnPopupsShow pressed", "Latter");
+                } else if(_butClick == 1){
+                    YovoSDK.ShowLog("OnPopupsShow pressed", "Yes");
+                }
+            }
+
+            @Override
+            public void OnAppTryQuit(int _answer) {
+                YovoSDK.ShowLog("OnAppTryQuit", String.valueOf(_answer));
+                if(_answer < 0)	{
+                    YovoSDK.ShowLog("OnAppTryQuit pressed", "Esc");
+                } else if(_answer == 0) {
+                    YovoSDK.ShowLog("OnAppTryQuit pressed", "Continue");
+                } else {
+                    YovoSDK.ShowLog("OnAppTryQuit pressed", "Exit");
+                }
+            }
         }, "2", "12345678901234567890123456789012", "com.YovoGames.aircraft", m_isCOPPA, m_isTesting); // com.androidSDK.example
-
-        MainActivity.m_yovoSDK.SetGaid();
-
-
-
 
 
     }
