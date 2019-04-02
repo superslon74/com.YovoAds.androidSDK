@@ -68,7 +68,7 @@ public class JsonParser {
                 JSONObject _ruleData = _Q.getJSONObject(ii);
                 if(EAdNetworkType.GetName(_ruleData.getInt("ADN")) != EAdNetworkType._ERROR) {
                     _queue.ml_quratorScenarioQueueRule.add(new _QuratorSettingScenarioRule(_ruleData.getInt("ID"), EAdNetworkType.GetName(_ruleData.getInt("ADN")),
-                            _ruleData.getInt("C"), _ruleData.getInt("V")));
+                            _ruleData.getInt("Limit"), _ruleData.getInt("Value")));
                 }
             }
             _listQuratorSettingScenario.add(_queue);

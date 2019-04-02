@@ -6,7 +6,7 @@ public class Rule {
 
     private int m_idRule = 0;
     private EAdNetworkType me_networkType;
-    private int m_countShowingMax = -1;
+    private int m_countShowingLimit = -1;
     private int m_countShowingRemain = -1;
 
     private boolean m_isUsed = false;
@@ -15,10 +15,10 @@ public class Rule {
     private Rule() {
     }
 
-    public Rule(int _idRule, EAdNetworkType _networkType, int _countShowingMax, int _countShowingRemain, boolean _isUsed) {
+    public Rule(int _idRule, EAdNetworkType _networkType, int _countShowingLimit, int _countShowingRemain, boolean _isUsed) {
         m_idRule = _idRule;
         me_networkType = _networkType;
-        m_countShowingMax = _countShowingMax;
+        m_countShowingLimit = _countShowingLimit;
         m_countShowingRemain = _countShowingRemain;
         m_isUsed = _isUsed;
     }
@@ -33,15 +33,15 @@ public class Rule {
     }
 
     public boolean IsHaveSomethingToShow() {
-        return (m_countShowingMax == -1 || (m_countShowingMax > 0 && m_countShowingRemain > 0)) ? true : false;
+        return (m_countShowingLimit == -1 || (m_countShowingLimit > 0 && m_countShowingRemain < m_countShowingLimit)) ? true : false;
     }
 
     public boolean IsHaveSomethingToShowUsed() {
-        return (m_isUsed && (m_countShowingMax == -1 || (m_countShowingMax > 0 && m_countShowingRemain > 0))) ? true : false;
+        return (m_isUsed && IsHaveSomethingToShow());
     }
 
-    public int GetCountShowingMax() {
-        return m_countShowingMax;
+    public int GetCountShowingLimit() {
+        return m_countShowingLimit;
     }
 
     public int GetCountShowingRemain() {
@@ -57,6 +57,6 @@ public class Rule {
     }
 
     public void Reset() {
-        m_countShowingRemain = m_countShowingMax;
+        m_countShowingRemain = m_countShowingLimit;
     }
 }

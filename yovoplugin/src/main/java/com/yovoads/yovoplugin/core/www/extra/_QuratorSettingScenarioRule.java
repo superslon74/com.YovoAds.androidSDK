@@ -6,7 +6,7 @@ public class _QuratorSettingScenarioRule {
 
     private int m_idRule = 0;
     private EAdNetworkType me_adNetworkType = null;
-    private int m_countShowingMax = -1;
+    private int m_countShowingLimit = -1;
     private int m_countShowingRemain = 0;
 
     private _QuratorSettingScenarioRule()
@@ -14,11 +14,11 @@ public class _QuratorSettingScenarioRule {
 
     }
 
-    public _QuratorSettingScenarioRule(int _idRule, EAdNetworkType _adNetworkType, int _countShowingMax, int _countShowingRemain)
+    public _QuratorSettingScenarioRule(int _idRule, EAdNetworkType _adNetworkType, int _countShowingLimit, int _countShowingRemain)
     {
         m_idRule = _idRule;
         me_adNetworkType = _adNetworkType;
-        m_countShowingMax = _countShowingMax;
+        m_countShowingLimit = _countShowingLimit;
         m_countShowingRemain = _countShowingRemain;
     }
 
@@ -32,9 +32,9 @@ public class _QuratorSettingScenarioRule {
         return me_adNetworkType;
     }
 
-    public int GetCountShowingMax()
+    public int GetCountShowingLimit()
     {
-        return m_countShowingMax;
+        return m_countShowingLimit;
     }
 
     public int GetCountShowingRemain()

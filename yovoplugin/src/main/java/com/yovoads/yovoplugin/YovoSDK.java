@@ -41,7 +41,7 @@ public class YovoSDK {
     }
 
     public static void ShowLog(String _class, String _method) {
-        String[] _blocking = new String[]{"Banner", "sjshdfkjsfhskdfsqoidsalkal"};
+        String[] _blocking = new String[]{"dfgdsf", "sjshdfkjsfhskdfsqoidsalkal"};
         for (String _block : _blocking) {
             if (_class.contains(_block)) {
                 return;

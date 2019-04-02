@@ -29,27 +29,27 @@ public abstract class AScenario
 
             switch (_qSSRule.GetNetworkType()) {
                 case _ADMOB:
-                    ml_listRules.add(new Rule(_qSSRule.GetIdRule(), EAdNetworkType._ADMOB, _qSSRule.GetCountShowingMax(), _qSSRule.GetCountShowingRemain(),
+                    ml_listRules.add(new Rule(_qSSRule.GetIdRule(), EAdNetworkType._ADMOB, _qSSRule.GetCountShowingLimit(), _qSSRule.GetCountShowingRemain(),
                             (AdNetworkData.getInstance().m_isAdmob && _alNetworksAvailable.contains(EAdNetworkType._ADMOB) ? true : false)));
                     break;
                 case _FACEBOOK:
-                    ml_listRules.add(new Rule(_qSSRule.GetIdRule(), EAdNetworkType._FACEBOOK, _qSSRule.GetCountShowingMax(), _qSSRule.GetCountShowingRemain(),
+                    ml_listRules.add(new Rule(_qSSRule.GetIdRule(), EAdNetworkType._FACEBOOK, _qSSRule.GetCountShowingLimit(), _qSSRule.GetCountShowingRemain(),
                             (AdNetworkData.getInstance().m_isFacebook && _alNetworksAvailable.contains(EAdNetworkType._FACEBOOK) ? true : false)));
                     break;
                 case _UNITY_ADS:
-                    ml_listRules.add(new Rule(_qSSRule.GetIdRule(), EAdNetworkType._UNITY_ADS, _qSSRule.GetCountShowingMax(), _qSSRule.GetCountShowingRemain(),
+                    ml_listRules.add(new Rule(_qSSRule.GetIdRule(), EAdNetworkType._UNITY_ADS, _qSSRule.GetCountShowingLimit(), _qSSRule.GetCountShowingRemain(),
                             (AdNetworkData.getInstance().m_isUnityAds && _alNetworksAvailable.contains(EAdNetworkType._UNITY_ADS) ? true : false)));
                     break;
                 case _CROSS_PROMOTION:
-                    ml_listRules.add(new Rule(_qSSRule.GetIdRule(), EAdNetworkType._CROSS_PROMOTION, _qSSRule.GetCountShowingMax(), _qSSRule.GetCountShowingRemain(),
+                    ml_listRules.add(new Rule(_qSSRule.GetIdRule(), EAdNetworkType._CROSS_PROMOTION, _qSSRule.GetCountShowingLimit(), _qSSRule.GetCountShowingRemain(),
                             (AdNetworkData.getInstance().m_isCrossPromotion && _alNetworksAvailable.contains(EAdNetworkType._CROSS_PROMOTION) ? true : false)));
                     break;
                 case _EXCHANGE:
-                    ml_listRules.add(new Rule(_qSSRule.GetIdRule(), EAdNetworkType._EXCHANGE, _qSSRule.GetCountShowingMax(), _qSSRule.GetCountShowingRemain(),
+                    ml_listRules.add(new Rule(_qSSRule.GetIdRule(), EAdNetworkType._EXCHANGE, _qSSRule.GetCountShowingLimit(), _qSSRule.GetCountShowingRemain(),
                             (AdNetworkData.getInstance().m_isExchange && _alNetworksAvailable.contains(EAdNetworkType._EXCHANGE) ? true : false)));
                     break;
                 case _YOVO_ADVERTISING:
-                    ml_listRules.add(new Rule(_qSSRule.GetIdRule(), EAdNetworkType._YOVO_ADVERTISING, _qSSRule.GetCountShowingMax(), _qSSRule.GetCountShowingRemain(),
+                    ml_listRules.add(new Rule(_qSSRule.GetIdRule(), EAdNetworkType._YOVO_ADVERTISING, _qSSRule.GetCountShowingLimit(), _qSSRule.GetCountShowingRemain(),
                             (AdNetworkData.getInstance().m_isYovoAdvertising && _alNetworksAvailable.contains(EAdNetworkType._YOVO_ADVERTISING) ? true : false)));
                     break;
             }
@@ -64,8 +64,8 @@ public abstract class AScenario
         while (_iterator.hasNext()) {
             Rule _rule = _iterator.next();
             if(_rule.getIdRule() == _showingIdRule) {
-                if(_rule.GetCountShowingMax() > 0) {
-                    _rule.SetCountShowingRemain(_rule.GetCountShowingRemain()-1);
+                if(_rule.GetCountShowingLimit() > 0) {
+                    _rule.SetCountShowingRemain(_rule.GetCountShowingRemain() + 1);
                     break;
                 }
             }

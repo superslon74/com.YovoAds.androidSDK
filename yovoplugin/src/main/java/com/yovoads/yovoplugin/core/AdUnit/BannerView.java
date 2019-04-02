@@ -213,7 +213,7 @@ public class BannerView implements IAdUnitOnMethod {
                 if(!_nextRuleId.m_isLoadAndShow) {
                     ScenarioBanner.getInstance().ShowNextAvailableAdUnit();
                 }
-                LoadYovo(_nextRuleId.m_isLoadAndShow, m_idRule);
+                LoadYovo(_nextRuleId.m_isLoadAndShow, _nextRuleId.m_idRule);
             }
         } else {
             if(ScenarioBanner.getInstance().GetNextAvailableRuleId(me_adNetworkType, m_idRule, me_adUnitPrice)) {

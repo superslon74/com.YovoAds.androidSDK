@@ -23,7 +23,7 @@ public class WWWParse implements IYHttpConnectResult {
 
     @Override
     public void ResultError(EWwwCommand _wwwCommand, String _command) {
-
+        YovoSDK.ShowLog("WWWRequestError", _command);
     }
 
     @Override

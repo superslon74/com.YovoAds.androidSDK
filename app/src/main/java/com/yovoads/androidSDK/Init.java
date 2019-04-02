@@ -12,6 +12,9 @@ import java.sql.Time;
 public class Init
 {
 
+    public static String m_yovoAdsAccountId = "1035";
+    public static String m_yovoAdsToken = "YeLyuXBYCIHvOnhRhVCcTHxBNExNjNzp";
+    public static String m_packageName = "com.YovoGames.aircraft";
     public static boolean m_isCOPPA = true;
     public static boolean m_isTesting = false;
     public static boolean m_bannerStartAwake = true;
@@ -74,7 +77,7 @@ public class Init
                     YovoSDK.ShowLog("OnAppTryQuit pressed", "Exit");
                 }
             }
-        }, "2", "12345678901234567890123456789012", "com.YovoGames.aircraft", m_isCOPPA, m_isTesting); // com.androidSDK.example
+        }, m_yovoAdsAccountId, m_yovoAdsToken, m_packageName, m_isCOPPA, m_isTesting); // com.androidSDK.example
 
 
     }

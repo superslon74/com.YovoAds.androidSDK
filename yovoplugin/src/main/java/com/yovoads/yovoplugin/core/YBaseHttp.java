@@ -25,8 +25,8 @@ public class YBaseHttp {
             _connection = (HttpURLConnection) myurl.openConnection();
 
             _connection.setDoOutput(true);
-            _connection.setConnectTimeout(4400);
-            _connection.setReadTimeout(4400);
+            _connection.setConnectTimeout(5000);
+            _connection.setReadTimeout(5000);
             _connection.setInstanceFollowRedirects(false);
             _connection.setUseCaches(false);
             _connection.setRequestMethod("POST");
