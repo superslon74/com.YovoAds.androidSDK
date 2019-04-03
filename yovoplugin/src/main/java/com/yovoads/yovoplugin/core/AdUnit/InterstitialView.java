@@ -146,7 +146,7 @@ public class InterstitialView implements IAdUnitOnMethod {
         {
             int _nextRuleId = ScenarioInterstitial.getInstance().GetNextAvailableRuleIdYovo(me_adNetworkType, m_idRule);
             if(_nextRuleId > 0) {
-                LoadYovo(m_idRule);
+                LoadYovo(_nextRuleId);
             } else if(_nextRuleId == -99) {
                 WWWRequest.getInstance().SendScenarioReset(EAdUnitType._INTERSTITIAL);
             }

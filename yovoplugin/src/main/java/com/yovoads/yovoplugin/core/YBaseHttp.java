@@ -55,13 +55,13 @@ public class YBaseHttp {
 
         } catch (ProtocolException e) {
             e.printStackTrace();
-            _iHttpConnectResult.ResultError("asj1d564aksdj " + e.getMessage());
+            _iHttpConnectResult.ResultError("sdjh2345jshfds " + e.getMessage());
         } catch (MalformedURLException e) {
             e.printStackTrace();
             _iHttpConnectResult.ResultError("sdjh2345jshfds " + e.getMessage());
         } catch (IOException e) {
             e.printStackTrace();
-            _iHttpConnectResult.ResultError("kshs3d9a7jshsh " + e.getMessage());
+            _iHttpConnectResult.ResultError("sdjh2345jshfds " + e.getMessage());
         } finally {
             _connection.disconnect();
         }

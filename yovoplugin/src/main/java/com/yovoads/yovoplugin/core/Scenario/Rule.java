@@ -57,6 +57,6 @@ public class Rule {
     }
 
     public void Reset() {
-        m_countShowingRemain = m_countShowingLimit;
+        m_countShowingRemain = 0;
     }
 }
