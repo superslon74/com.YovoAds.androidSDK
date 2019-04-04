@@ -17,6 +17,7 @@ public class _QuratorSetting {
     public String m_error = "";
     public long m_modified = 0;
     public int m_sessionPeriod = 21;
+    public int m_updateScenario = 377;
 
 
     public ArrayList<_QuratorSettingScenario> ml_quratorSettingScenario = new ArrayList<_QuratorSettingScenario>();

@@ -79,7 +79,7 @@ public class WWWParse implements IYHttpConnectResult {
             if(_quratorWww.m_modified > _quratorDefault.m_modified && !_quratorWww.GetStringScenarioQueue().isEmpty())
             {
                 YTimer.getInstance().SetSessionPeriod(_quratorWww.m_sessionPeriod);
-                dbLocal.getInstance().QuratorUpdateData(_quratorWww.m_modified, _quratorWww.m_sessionPeriod, _quratorWww.GetStringAdNetwork(), _quratorWww.GetStringScenarioQueue());
+                dbLocal.getInstance().QuratorUpdateData(_quratorWww.m_modified, _quratorWww.m_sessionPeriod, _quratorWww.m_updateScenario, _quratorWww.GetStringAdNetwork(), _quratorWww.GetStringScenarioQueue());
             }
 
             _quratorDefault = null;

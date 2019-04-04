@@ -46,7 +46,9 @@ public class JsonParser {
                 GetScenarioQueue(_quratorTemp.ml_quratorSettingScenario, _obj2.getJSONArray(dbLocal.mk_Queue));
 
                 _obj2 = _obj.getJSONObject("settings");
-                _quratorTemp.m_sessionPeriod = _obj2.getInt(dbLocal.mk_sessionPeriod);
+                JSONObject _obj3 = _obj2.getJSONObject("GlobalSettings");
+                _quratorTemp.m_sessionPeriod = _obj3.getInt(dbLocal.mk_sessionPeriod);
+                _quratorTemp.m_updateScenario = _obj3.getInt(dbLocal.mk_updateScenario);
                 _quratorTemp.SetStringAdNetwork(_obj2.getJSONArray(dbLocal.mk_adNetworks).toString());
                 GetAdNetworkAvailable(_quratorTemp.md_quratorAdNetworksAvailable, _obj2.getJSONArray(dbLocal.mk_adNetworks));
             }

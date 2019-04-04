@@ -15,6 +15,7 @@ public class dbLocal {
     private SharedPreferences.Editor m_dbSet;
 
     public final static String mk_sessionPeriod = "Sessionperiod";
+    public final static  String mk_updateScenario = "UpdateScenario";
 
     public final static String mk_rewardCountPerDayMax = "RewardedCountPerDayMax";
     public final static String mk_rewardCountShowing24 = "RewardedCountShowing24";
@@ -43,7 +44,7 @@ public class dbLocal {
 
         if (m_db.getString("qurator_db_Local", "empty") == "empty") {
 
-            QuratorUpdateData(-1, 13, "[{\"ID\":3,\"AdTypes\":[0,1,2]},{\"ID\":4,\"AdTypes\":[0,1,2]}]",
+            QuratorUpdateData(-1, 13, 377,"[{\"ID\":3,\"AdTypes\":[0,1,2]},{\"ID\":4,\"AdTypes\":[0,1,2]}]",
                     "[{\"T\":0,\"Q\":[{\"ID\":0,\"ADN\":3,\"C\":-1,\"V\":0},{\"ID\":0,\"ADN\":4,\"C\":-1,\"V\":0}]},{\"T\":1,\"Q\":[{\"ID\":0,\"ADN\":3,\"C\":-1,\"V\":0},{\"ID\":0,\"ADN\":4,\"C\":-1,\"V\":0}]},{\"T\":2,\"Q\":[{\"ID\":0,\"ADN\":3,\"C\":-1,\"V\":0},{\"ID\":0,\"ADN\":4,\"C\":-1,\"V\":0}]}]");
             RewardSetData(-1, -1, 0, 0);
 
@@ -52,11 +53,12 @@ public class dbLocal {
         }
     }
 
-    public void QuratorUpdateData(long _scenarioModified, int _sessionPeriod, String _adNetworkAvailable, String _scenarioQueue) {
+    public void QuratorUpdateData(long _scenarioModified, int _sessionPeriod, int _updateScenario, String _adNetworkAvailable, String _scenarioQueue) {
 
         m_dbSet = m_db.edit();
         m_dbSet.putLong(mk_Modified, _scenarioModified);
         m_dbSet.putInt(mk_sessionPeriod, _sessionPeriod);
+        m_dbSet.putInt(mk_updateScenario, _updateScenario);
         m_dbSet.putString(mk_adNetworks, _adNetworkAvailable);
         m_dbSet.putString(mk_Queue, _scenarioQueue);
         m_dbSet.putString("qurator_db_Local", "empty");
