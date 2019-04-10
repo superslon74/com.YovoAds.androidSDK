@@ -59,7 +59,7 @@ public class HttpAsyncTask extends AsyncTask<Integer, Void, String>
         } else if (JsonParser.IsOK(_json)) {
             mi_yHttpConnectResult.ResultOk(m_wwwCommand, _json);
         } else {
-            mi_yHttpConnectResult.ResultError(m_wwwCommand, "34jkfo9sa4fa");
+            mi_yHttpConnectResult.ResultError(m_wwwCommand, _json);
         }
     }
 }

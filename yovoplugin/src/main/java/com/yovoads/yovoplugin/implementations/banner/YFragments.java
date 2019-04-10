@@ -68,28 +68,27 @@ public class YFragments extends FragmentActivity
         switch (Banners.getInstance().m_gravity) {
             case _TOP:
                 YBannerBackground.getInstance().SetGravityTop();
-                YBannerView.getInstance().SetGravityTop(Gravity.CENTER_HORIZONTAL, 0);
+                YBannerView.getInstance().SetGravityTop(Gravity.CENTER_HORIZONTAL);
                 break;
             case _BOTTON:
                 YBannerBackground.getInstance().SetGravityBotton();
-                YBannerView.getInstance().SetGravityBotton(Gravity.CENTER_HORIZONTAL, 0);
+                YBannerView.getInstance().SetGravityBotton(Gravity.CENTER_HORIZONTAL);
                 break;
             case _TOP_LEFT:
                 YBannerBackground.getInstance().SetGravityTop();
-                YBannerView.getInstance().SetGravityTop(Gravity.LEFT, 0);
+                YBannerView.getInstance().SetGravityTop(Gravity.LEFT);
                 break;
             case _TOP_RIGHT:
                 YBannerBackground.getInstance().SetGravityTop();
-                YBannerView.getInstance().SetGravityTop(Gravity.RIGHT, 0);
+                YBannerView.getInstance().SetGravityTop(Gravity.RIGHT);
                 break;
             case _BOTTON_LEFT:
                 YBannerBackground.getInstance().SetGravityBotton();
-                YBannerView.getInstance().SetGravityBotton(Gravity.LEFT, 0);
+                YBannerView.getInstance().SetGravityBotton(Gravity.LEFT);
                 break;
             case _BOTTON_RIGHT:
                 YBannerBackground.getInstance().SetGravityBotton();
-                YBannerView.getInstance().SetGravityBotton(Gravity.RIGHT, 0);
-                ;
+                YBannerView.getInstance().SetGravityBotton(Gravity.RIGHT);
                 break;
         }
     }

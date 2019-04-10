@@ -99,20 +99,22 @@ public class InterstitialView implements IAdUnitOnMethod {
 
     @Override
     public void OnAdLoaded() {
-        //WWWRequest.getInstance().SendEventAdUnit(Enums.EventAdUnit.Loaded, me_networkType, Enums.AdUnitType.interstitial, me_adUnitPrice, 0);
         YovoSDK.ShowLog("ViewInterstitial", me_adNetworkType + " -> interstitial -> OnAdLoaded -> " + String.valueOf(me_adUnitPrice));
     }
 
     @Override
     public void OnAdFailedToLoad(String _errorReason) {
-        //WWWRequest.getInstance().SendEventAdUnit(EEventAdUnit.LoadFailed, me_adNetworkType, EAdUnitType.interstitial, me_adUnitPrice, 0);
         YovoSDK.ShowLog("ViewInterstitial",me_adNetworkType + " -> interstitial -> OnAdFailedToLoad -> " + String.valueOf(me_adUnitPrice) + "  ERROR=" +_errorReason);
-        WWWRequest.getInstance().SendEventLoadFailed(me_adNetworkType, EAdUnitType._INTERSTITIAL, me_adUnitPrice, m_adUnitId, EAdUnitAdLoadingFailed._ERROR_TEMP);
+        if(me_adNetworkType == EAdNetworkType._CROSS_PROMOTION){
+            ScenarioInterstitial.getInstance().SetRemainMaxLimit(me_adNetworkType, m_idRule);
+            IsLoadAndShowThisAdUnitNow();
+        } else {
+            WWWRequest.getInstance().SendEventLoadFailed(me_adNetworkType, EAdUnitType._INTERSTITIAL, me_adUnitPrice, m_adUnitId, EAdUnitAdLoadingFailed._ERROR_TEMP);
+        }
     }
 
     @Override
     public void OnAdShowing() {
-       // WWWRequest.getInstance().SendEventAdUnit(EEventAdUnit.Show, me_adNetworkType, EAdUnitType.interstitial, me_adUnitPrice, 0);
         YovoSDK.ShowLog("ViewInterstitial",me_adNetworkType + " -> interstitial -> OnAdShowing -> " + String.valueOf(me_adUnitPrice));
         ScenarioInterstitial.getInstance().OnShowing(m_idRule);
         Interstitials.getInstance().SetTimeLastShowing();
@@ -121,7 +123,6 @@ public class InterstitialView implements IAdUnitOnMethod {
 
     @Override
     public void OnAdClicked() {
-        //WWWRequest.getInstance().SendEventAdUnit(EEventAdUnit.Click, me_adNetworkType, EAdUnitType.interstitial, me_adUnitPrice, 0);
         YovoSDK.ShowLog("ViewInterstitial",me_adNetworkType + " -> interstitial -> OnAdClick -> " + String.valueOf(me_adUnitPrice));
         WWWRequest.getInstance().SendEventClick(me_adNetworkType, EAdUnitType._INTERSTITIAL, me_adUnitPrice, m_idRule, m_adUnitId);
     }
@@ -135,13 +136,14 @@ public class InterstitialView implements IAdUnitOnMethod {
     public void OnAdDestroy()
     {
         YovoSDK.ShowLog("ViewInterstitial", String.valueOf(me_adNetworkType) + " -> interstitial -> OnAdDestroy -> " + String.valueOf(me_adUnitPrice));
-        m_exampleAdUnit.me_isAdUnitlLoadingResult = EAdUnitLoadingResult._NONE;
-        Interstitials.getInstance().mc_interstitialViewActive = null;
         IsLoadAndShowThisAdUnitNow();
     }
 
     private void IsLoadAndShowThisAdUnitNow()
     {
+        m_exampleAdUnit.me_isAdUnitlLoadingResult = EAdUnitLoadingResult._NONE;
+        Interstitials.getInstance().mc_interstitialViewActive = null;
+
         if(me_adNetworkType == EAdNetworkType._CROSS_PROMOTION || me_adNetworkType == EAdNetworkType._EXCHANGE || me_adNetworkType == EAdNetworkType._YOVO_ADVERTISING)
         {
             int _nextRuleId = ScenarioInterstitial.getInstance().GetNextAvailableRuleIdYovo(me_adNetworkType, m_idRule);

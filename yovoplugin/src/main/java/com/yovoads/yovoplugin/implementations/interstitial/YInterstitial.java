@@ -78,12 +78,14 @@ public class YInterstitial extends AdTypeBaseCommon implements IYHttpConnectResu
     public void ResultError(String _command)
     {
         YovoSDK.ShowLog("YovoInterstitial", ".yovoads = " + _command);
+        m_callback.OnAdFailedToLoad(_command);
     }
 
     @Override
     public void ResultError(EWwwCommand _wwwComand, String _command)
     {
         YovoSDK.ShowLog("YovoInterstitial", ".yovoads = " + _command);
+        m_callback.OnAdFailedToLoad(_command);
     }
 
     @Override

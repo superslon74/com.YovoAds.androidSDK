@@ -12,7 +12,7 @@ public abstract class ExampleBanner
     private int m_timeCur = 30;
 
     protected void SetShowTimeMax(int _showTime) {
-        _showTime = 8;
+        _showTime = 8000;
         m_timeMax = _showTime;
         m_timeCur = m_timeMax;
     }

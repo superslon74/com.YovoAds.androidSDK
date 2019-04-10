@@ -107,17 +107,17 @@ public class DI
 
         SetGaid();
 
-//        YovoSDK.ShowLog("SCREEN__DISPLAY_WIDTH", String.valueOf(_DISPLAY_WIDTH));
-//        YovoSDK.ShowLog("SCREEN__DISPLAY_HEIGHT", String.valueOf(_DISPLAY_HEIGHT));
-//        YovoSDK.ShowLog("SCREEN__DISPLAY_RATIO", String.valueOf(_DISPLAY_RATIO));
-//        YovoSDK.ShowLog("SCREEN__density", String.valueOf(m_activity.getResources().getDisplayMetrics().density));
-//        YovoSDK.ShowLog("SCREEN__densityDpi", String.valueOf(m_activity.getResources().getDisplayMetrics().densityDpi));
-//        YovoSDK.ShowLog("SCREEN__heightPixels", String.valueOf(m_activity.getResources().getDisplayMetrics().heightPixels));
-//        YovoSDK.ShowLog("SCREEN__widthPixels", String.valueOf(m_activity.getResources().getDisplayMetrics().widthPixels));
-//        YovoSDK.ShowLog("SCREEN__scaledDensity", String.valueOf(m_activity.getResources().getDisplayMetrics().scaledDensity));
-//        YovoSDK.ShowLog("SCREEN__xdpi", String.valueOf(m_activity.getResources().getDisplayMetrics().xdpi));
-//        YovoSDK.ShowLog("SCREEN__ydpi", String.valueOf(m_activity.getResources().getDisplayMetrics().ydpi));
-//        YovoSDK.ShowLog("IS_BANNER_HEIGHT_DOUBLE", String.valueOf(_IS_BANNER_HEIGHT_DOUBLE));
+        YovoSDK.ShowLog("SCREEN__DISPLAY_WIDTH", String.valueOf(_DISPLAY_WIDTH));
+        YovoSDK.ShowLog("SCREEN__DISPLAY_HEIGHT", String.valueOf(_DISPLAY_HEIGHT));
+        YovoSDK.ShowLog("SCREEN__DISPLAY_RATIO", String.valueOf(_DISPLAY_RATIO));
+        YovoSDK.ShowLog("SCREEN__density", String.valueOf(m_activity.getResources().getDisplayMetrics().density));
+        YovoSDK.ShowLog("SCREEN__densityDpi", String.valueOf(m_activity.getResources().getDisplayMetrics().densityDpi));
+        YovoSDK.ShowLog("SCREEN__heightPixels", String.valueOf(m_activity.getResources().getDisplayMetrics().heightPixels));
+        YovoSDK.ShowLog("SCREEN__widthPixels", String.valueOf(m_activity.getResources().getDisplayMetrics().widthPixels));
+        YovoSDK.ShowLog("SCREEN__scaledDensity", String.valueOf(m_activity.getResources().getDisplayMetrics().scaledDensity));
+        YovoSDK.ShowLog("SCREEN__xdpi", String.valueOf(m_activity.getResources().getDisplayMetrics().xdpi));
+        YovoSDK.ShowLog("SCREEN__ydpi", String.valueOf(m_activity.getResources().getDisplayMetrics().ydpi));
+        YovoSDK.ShowLog("IS_BANNER_HEIGHT_DOUBLE", String.valueOf(_IS_BANNER_HEIGHT_DOUBLE));
     }
 
     private boolean m_isFirst = true;
@@ -143,14 +143,28 @@ public class DI
     }
 
 
-    public int GetBannerHeight()
+    public int GetBannerHeight_int()
     {
         return  (int)GetBannerHeight_float();
     }
 
     public float GetBannerHeight_float()
     {
-        return  _IS_BANNER_HEIGHT_DOUBLE * DI._DISPLAY_DPI;
+        return  (float) _IS_BANNER_HEIGHT_DOUBLE * _DISPLAY_DPI;
+    }
+
+    public boolean Is215() {
+        if(_SCREEN_ORIENTATION == EScreenOrientation._PORTRAIT){
+            if((float)_DISPLAY_HEIGHT / (float)_DISPLAY_WIDTH > 1.8) {
+                return true;
+            }
+            return false;
+        } else {
+            if((float)_DISPLAY_WIDTH / (float)_DISPLAY_HEIGHT > 1.8) {
+                return true;
+            }
+        }
+        return false;
     }
 
 

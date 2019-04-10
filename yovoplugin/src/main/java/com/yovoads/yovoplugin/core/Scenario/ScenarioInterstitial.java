@@ -97,6 +97,17 @@ public class ScenarioInterstitial extends AScenario {
     }
 ////////////////////////////////////////////////////////////// ---  Method  --- //////////////////////////////////////////////////////////////
 
+    public void SetRemainMaxLimit(EAdNetworkType  _adNetworkType, int _showingLastIdRule) {
+
+        Iterator<Rule> _iterator = ml_listRules.iterator();
+        while (_iterator.hasNext()) {
+            Rule _rule = _iterator.next();
+            if (_rule.getIdRule() == _showingLastIdRule) {
+                _rule.SetCountShowingRemain(_rule.GetCountShowingLimit());
+                break;
+            }
+        }
+    }
     public int GetNextAvailableRuleIdYovo(EAdNetworkType  _adNetworkType, int _showingLastIdRule) {
 
         int _nextRuleId = -99; // -1 dalshe po scenariu netu takih pravil no ust drygie pravula activnue // -99 dslshe nety ne kakih voobzhe activnuh pravil

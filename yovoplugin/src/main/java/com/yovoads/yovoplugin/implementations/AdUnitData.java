@@ -11,6 +11,7 @@ public class AdUnitData
     public String m_clickURL =  null;
     public String m_urlIcon = null;
     public String m_urlScreen = null;
+    public String m_urlVideo = null;
     public String m_title = "---";
     public String m_description = "-----";
     public int m_showTime = 5;
@@ -31,6 +32,7 @@ public class AdUnitData
                 m_clickURL = _obj.getString("ClickURL");
                 m_urlIcon = _obj.getString("IconURLImg");
                 m_urlScreen = _obj.getString("ScreenshotURLImg");
+                m_urlVideo = _obj.getString("VideoURL");
                 m_title = _obj.getString("Title");
                 m_description = _obj.getString("Description");
                 m_showTime = _obj.getInt("ShowTime");

@@ -107,19 +107,19 @@ public class YTimer implements Runnable
 
     public void RunLoadingAdUnitBanner()
     {
-        m_loadBannerTimer = 34;
+        m_loadBannerTimer = 34000;
         ScenarioBanner.getInstance().RunLoadingAdUnit();
     }
 
     public void RunLoadingAdUnitInterstitial()
     {
-        m_loadInterstitilalTimer = 44;
+        m_loadInterstitilalTimer = 44000;
         ScenarioInterstitial.getInstance().RunLoadingAdUnit();
     }
 
     public void RunLoadingAdUnitReward()
     {
-        m_loadRewardTimer = 55;
+        m_loadRewardTimer = 55000;
         ScenarioReward.getInstance().RunLoadingAdUnit();
     }
 
