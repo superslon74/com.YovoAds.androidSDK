@@ -6,7 +6,6 @@ public enum EPostCommand {
     _VERSION_SDK,
     _HEIGHT_DISPLAY,
     _WIDTH_DISPLAY,
-    _SCREEN_ORIENTATION,
     _LANGUAGE_DEVICE,
     _GAID,
     _DID,
@@ -46,8 +45,6 @@ public enum EPostCommand {
                 return "h";
             case _WIDTH_DISPLAY:
                 return "w";
-            case _SCREEN_ORIENTATION:
-                return "page";
             case _LANGUAGE_DEVICE:
                 return "lang";
             case _GAID:

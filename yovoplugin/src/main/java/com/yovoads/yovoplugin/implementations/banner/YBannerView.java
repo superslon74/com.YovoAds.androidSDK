@@ -147,22 +147,22 @@ public class YBannerView extends Fragment
         }
 
         m_screen.getLayoutParams().height = (int) (_bannerHeightFLOAT * m_scaleFactor);
-        m_screen.getLayoutParams().width = (int) (_bannerHeightFLOAT * (246.0 / 120.0) * m_scaleFactor);
+        m_screen.getLayoutParams().width = (int) (_bannerHeightFLOAT * (246.0f / 120.0f) * m_scaleFactor);
         ((ViewGroup.MarginLayoutParams) m_screen.getLayoutParams()).setMargins(-0, 0, 0, 0);
 
         m_icon.getLayoutParams().height = (int) (_bannerHeightFLOAT * m_scaleFactor);
         m_icon.getLayoutParams().width = (int) (_bannerHeightFLOAT * m_scaleFactor);
        // int _marginRight = (int) (DI._IS_BANNER_HEIGHT_DOUBLE * DI._DISPLAY_DPI * 1.05 * (50.0 / DI._IS_BANNER_HEIGHT_DOUBLE) * m_scaleFactor);
-        int _marginRight = (int) (DI._IS_BANNER_HEIGHT_DOUBLE * DI._DISPLAY_DPI * 1.05 * (50.0 / ((DI.getInstance().Is215()) ? DI._IS_BANNER_HEIGHT_DOUBLE : 50) * m_scaleFactor));
+        int _marginRight = (int) (DI._IS_BANNER_HEIGHT_DOUBLE * DI._DISPLAY_DPI * 1.05f * (50.0f / ((DI.getInstance().Is215()) ? DI._IS_BANNER_HEIGHT_DOUBLE : 50) * m_scaleFactor));
         ((ViewGroup.MarginLayoutParams) m_icon.getLayoutParams()).setMargins(0, 0, _marginRight, 0);
 
         m_install.getLayoutParams().height = (int) (_bannerHeightFLOAT * m_scaleFactor);
         m_install.getLayoutParams().width = (int) (_bannerHeightFLOAT * m_scaleFactor);
         ((ViewGroup.MarginLayoutParams) m_install.getLayoutParams()).setMargins(0, 0, 0, 0);
 
-        int _starHeight = (int) (_bannerHeightFLOAT * m_scaleFactor * (21.0 / 50.0));
-        int _starBottonMargin = (int) (_bannerHeightFLOAT * ((3.0 * m_scaleFactor) / 50.0));
-        float _starPosStart = (float) (_bannerHeightFLOAT * m_scaleFactor * ((DI._IS_BANNER_HEIGHT_DOUBLE == 90) ? 1.0233f : 1.0f) * (246.0 / 120.0) + (_bannerHeightFLOAT * 0.03f));
+        int _starHeight = (int) (_bannerHeightFLOAT * m_scaleFactor * (21.0f / 50.0f));
+        int _starBottonMargin = (int) (_bannerHeightFLOAT * ((3.0f * m_scaleFactor) / 50.0f));
+        float _starPosStart = (float) (_bannerHeightFLOAT * m_scaleFactor * ((DI._IS_BANNER_HEIGHT_DOUBLE == 90) ? 1.0233f : 1.0f) * (246.0f / 120.0f) + (_bannerHeightFLOAT * 0.03f));
         float _starPosSpace = (_bannerHeightFLOAT * 0.034f * m_scaleFactor) + _starHeight;
 
         m_star1.getLayoutParams().height = _starHeight;
@@ -185,7 +185,7 @@ public class YBannerView extends Fragment
         m_star5.getLayoutParams().width = _starHeight;
         ((ViewGroup.MarginLayoutParams) m_star5.getLayoutParams()).setMargins((int) (_starPosStart + (_starPosSpace * 4)), 0, 0, _starBottonMargin);
 
-        ((ViewGroup.MarginLayoutParams) m_title.getLayoutParams()).setMargins((int) (_bannerHeightFLOAT * 0), 0, 0, (int) (_bannerHeightFLOAT * 0.5 * m_scaleFactor));
+        ((ViewGroup.MarginLayoutParams) m_title.getLayoutParams()).setMargins((int) (_bannerHeightFLOAT * 0), 0, 0, (int) (_bannerHeightFLOAT * 0.5f * m_scaleFactor));
 
         m_imageOnly.getLayoutParams().height = (int) (_bannerHeightFLOAT);
         m_imageOnly.getLayoutParams().width = (int) (_bannerHeightFLOAT * 6.4f);

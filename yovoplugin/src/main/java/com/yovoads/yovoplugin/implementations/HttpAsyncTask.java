@@ -45,8 +45,7 @@ public class HttpAsyncTask extends AsyncTask<Integer, Void, String>
         _postParams += "&" + EPostCommand.GetString(EPostCommand._VERSION_SDK) + "=" + DI._VERSION_SDK;
         _postParams += "&" + EPostCommand.GetString(EPostCommand._OPERATING_SYSTEM_VERSION) + "=" + DI._OPERATING_SYSTEM_VERSION;
         _postParams += "&" + EPostCommand.GetString(EPostCommand._WIDTH_DISPLAY) + "=" + DI._DISPLAY_WIDTH;
-        _postParams += "&" + EPostCommand.GetString(EPostCommand._HEIGHT_DISPLAY) + "=" + DI._DISPLAY_HEIGHT_DPI;
-        _postParams += "&" + EPostCommand.GetString(EPostCommand._SCREEN_ORIENTATION) + "=" + DI._SCREEN_ORIENTATION;
+        _postParams += "&" + EPostCommand.GetString(EPostCommand._HEIGHT_DISPLAY) + "=" + DI._DISPLAY_HEIGHT;
         _postParams += "&" + EPostCommand.GetString(EPostCommand._LANGUAGE_DEVICE) + "=" + DI._LANGUAGE_DEVICE;
         return _postParams;
     }
